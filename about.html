@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href="./assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" as="image" href="./assets/brand/original-white/logo-white.png" />
+    <link rel="preload" as="image" href="./assets/brand/original-white/mascot-white.png" />
+    <link rel="preload" as="image" href="./assets/brand/original-white/face-white.png" media="(min-width: 1081px)" />
+    <link rel="preload" as="image" href="./assets/brand/original-white/mascot-back-white.png" media="(min-width: 1081px)" />
+    <title>공연장 소개 | Backline Stage</title>
+<link rel="icon" type="image/png" href="./assets/brand/mascot-face.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./page-transitions.js"></script>
+    <meta name="description" content="Backline Stage 무대 스펙, 장비, 객석, 운영 포맷과 공연장 사진을 확인하세요." />
+    <link rel="canonical" href="https://sbchung-ops.github.io/backline-stage-live/about.html" />
+    <meta property="og:site_name" content="Backline Stage" />
+    <meta property="og:title" content="공연장 소개 | Backline Stage" />
+    <meta property="og:description" content="Backline Stage 무대 스펙, 장비, 객석, 운영 포맷과 공연장 사진을 확인하세요." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sbchung-ops.github.io/backline-stage-live/about.html" />
+    <meta property="og:image" content="https://sbchung-ops.github.io/backline-stage-live/assets/hero-reference-style.png" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="공연장 소개 | Backline Stage" />
+    <meta name="twitter:description" content="Backline Stage 무대 스펙, 장비, 객석, 운영 포맷과 공연장 사진을 확인하세요." />
+    <meta name="twitter:image" content="https://sbchung-ops.github.io/backline-stage-live/assets/hero-reference-style.png" />
+    <script defer src="./site-data.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="./index.html" aria-label="Backline Stage 홈">
+          <img src="./assets/brand/original-white/logo-white.png" width="3243" height="2238" alt="" />
+          <span class="brand-name">Backline Stage</span>
+        </a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="./index.html">홈</a>
+          <a class="is-active" href="./about.html">공연장 소개</a>
+          <a href="./rental.html">대관 안내</a>
+          <a href="./schedule.html">대관 일정</a>
+          <a href="./gallery.html">갤러리</a>
+          <a href="./contact.html">대관 문의</a>
+          <a href="./location.html">오시는 길</a>
+        </nav>
+        <a class="header-cta" href="./contact.html">문의하기 →</a>
+        <button class="nav-toggle" aria-label="메뉴 열기" onclick="document.querySelector('.nav').classList.toggle('is-open')">MENU</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="page-hero__noise" aria-hidden="true"></div>
+        <div class="page-hero__inner">
+          <div>
+            <p class="eyebrow">PAGE · 02 / VENUE</p>
+            <h1>공연장<br /><span class="stamp">소개</span></h1>
+            <p class="lead">
+              대관 판단에 필요한 무대 스펙, 장비, 운영 포맷을 한 페이지에 모았습니다. 거친 사운드, 가까운 객석, 명확한 동선이 Backline Stage의 핵심입니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 공연장 철학 -->
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Philosophy</p>
+              <h2>가까운 거리, 큰 소리, 빠른 결정.</h2>
+              <p class="lead">Backline Stage는 대형 컨벤션홀이 아닙니다. 밴드의 라이브 질감이 살아 있는 작은 무대로, 공연·쇼케이스·라이브 촬영처럼 밀도 있는 행사에 최적화되어 있습니다.</p>
+            </div>
+            <div class="section-head__r"><span class="num">— 01</span></div>
+          </div>
+
+          <div class="now now--stage-carousel">
+            <div class="now__intro">
+              <h2>밴드를<br />위한 무대.</h2>
+              <p>
+                무대 위 사운드 모니터링, 객석 흡음, 백라인 동선까지 라이브 운영을 기준으로 설계됐습니다. 음향·조명 기본 패키지가 포함되며, 행사 성격에 맞춰 추가 장비 협의가 가능합니다.
+              </p>
+              <a class="btn solid" href="./contact.html">이 공간으로 문의 →</a>
+            </div>
+            <div class="venue-carousel" data-venue-carousel aria-label="공연장 사진 슬라이드">
+              <div class="venue-carousel__viewport" aria-live="polite">
+                <article class="venue-carousel__slide is-active" data-carousel-slide aria-label="1 / 3">
+                  <img src="./assets/hero-reference-style.png" alt="보라색 조명을 받은 Backline Stage 무대 전면" loading="lazy" decoding="async" />
+                  <span class="venue-carousel__tag">STAGE FRONT</span>
+                </article>
+                <article class="venue-carousel__slide is-next" data-carousel-slide aria-label="2 / 3">
+                  <img src="./assets/hero.jpg" alt="공연 조명과 연무가 어우러진 라이브 현장 분위기" loading="lazy" decoding="async" />
+                  <span class="venue-carousel__tag">LIVE MOOD</span>
+                </article>
+                <article class="venue-carousel__slide is-prev" data-carousel-slide aria-label="3 / 3">
+                  <img src="./assets/venue-hero.png" alt="Backline Stage 공간 구성과 백라인 이미지" loading="lazy" decoding="async" />
+                  <span class="venue-carousel__tag">BACKLINE</span>
+                </article>
+              </div>
+
+              <button class="venue-carousel__arrow venue-carousel__arrow--prev" type="button" data-carousel-prev aria-label="이전 사진 보기">&lt;</button>
+              <button class="venue-carousel__arrow venue-carousel__arrow--next" type="button" data-carousel-next aria-label="다음 사진 보기">&gt;</button>
+
+              <div class="venue-carousel__footer">
+                <div class="venue-carousel__dots" aria-label="사진 선택">
+                  <button class="is-active" type="button" data-carousel-dot aria-label="1번 사진 보기"></button>
+                  <button type="button" data-carousel-dot aria-label="2번 사진 보기"></button>
+                  <button type="button" data-carousel-dot aria-label="3번 사진 보기"></button>
+                </div>
+                <div class="venue-carousel__progress" aria-hidden="true"><span data-carousel-progress></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 사이즈 / SPEC TABLE -->
+      <section class="section alt">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Size · Spec</p>
+              <h2>공연장 사이즈.</h2>
+              <p class="lead">대관 시 자주 받는 사이즈와 운영 조건을 한 번에 정리했습니다.</p>
+            </div>
+            <div class="section-head__r"><span class="num">— 02</span></div>
+          </div>
+
+          <table class="spec-table">
+            <tbody>
+              <tr><th>무대 사이즈</th><td>가로 6.6m × 세로 4.3m (무대 높이 0.6m)</td></tr>
+              <tr><th>객석 면적</th><td>약 88㎡ — 스탠딩 최대 140명 / 좌석 운영 60–70석</td></tr>
+              <tr><th>천장 높이</th><td>3.8m (조명 트러스 기준)</td></tr>
+              <tr><th>층 / 위치</th><td>지하 1층, 별도 분리된 출입구 · 화물 엘리베이터 협의</td></tr>
+              <tr><th>대기실</th><td>아티스트 라운지 1실, 의상 행거·미러 구비</td></tr>
+              <tr><th>운영 시간</th><td>11:00 – 24:00 (리허설 / 본 공연 / 정리)</td></tr>
+              <tr><th>관객 동선</th><td>입장 매표 → 클로크룸 → 객석 / 백스테이지 분리</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 장비 리스트 -->
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Gear · Backline</p>
+              <h2>장비 리스트.</h2>
+              <p class="lead">기본 패키지는 무료 제공, 별표(★) 장비는 협의 후 추가 운영합니다. 전체 장비 리스트는 엑셀로 다운로드 가능합니다.</p>
+            </div>
+            <div class="section-head__r"><a class="btn" href="./assets/equipment-list.xlsx" download>장비 리스트 .xlsx ↓</a></div>
+          </div>
+
+          <div class="gear-grid">
+            <div class="gear-card">
+              <div class="gear-cat">PA · 음향</div>
+              <h4>FOH / Monitor</h4>
+              <ul>
+                <li>L-Acoustics 라인 어레이 / Sub</li>
+                <li>인이어 모니터 시스템 (최대 4채널)</li>
+                <li>플로어 모니터 4기</li>
+                <li>디지털 콘솔 32ch</li>
+              </ul>
+            </div>
+            <div class="gear-card">
+              <div class="gear-cat">Light · 조명</div>
+              <h4>Light fixture</h4>
+              <ul>
+                <li>무빙 헤드 라이트 6기</li>
+                <li>LED PAR 12기 · 스트로브 2기</li>
+                <li>스모크 / 헤이저 머신</li>
+                <li>조명 콘솔 1식</li>
+              </ul>
+            </div>
+            <div class="gear-card">
+              <div class="gear-cat">Backline · 악기</div>
+              <h4>Drum / Amp</h4>
+              <ul>
+                <li>드럼 풀세트 (Yamaha / Tama 협의)</li>
+                <li>기타 앰프 2종 / 베이스 앰프 1종</li>
+                <li>키보드 스탠드 · 페달보드 패치</li>
+                <li>마이크 다이내믹 / 콘덴서 풀세트</li>
+              </ul>
+            </div>
+            <div class="gear-card">
+              <div class="gear-cat">Stage · 무대</div>
+              <h4>Stage gear</h4>
+              <ul>
+                <li>리허설용 메트로놈 / 클릭 시스템</li>
+                <li>인터컴 시스템 (FOH ↔ 무대)</li>
+                <li>케이블 / DI 박스 풀세트</li>
+                <li>무대 펜스, 무대 양옆 모니터</li>
+              </ul>
+            </div>
+            <div class="gear-card">
+              <div class="gear-cat">Video · 영상 ★</div>
+              <h4>Capture / Stream</h4>
+              <ul>
+                <li>멀티캠 촬영 3대 (협의)</li>
+                <li>HDMI · SDI 라이브 송출 패치</li>
+                <li>큐 모니터 운영</li>
+              </ul>
+            </div>
+            <div class="gear-card">
+              <div class="gear-cat">Power · 전원 ★</div>
+              <h4>Power</h4>
+              <ul>
+                <li>3상 380V 분전반 1식</li>
+                <li>독립 회로 차단기 · 콘센트 다구</li>
+                <li>추가 발전기 협의 가능</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 단면도 -->
+      <section class="section dark">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Floor plan</p>
+              <h2>공연장 단면도.</h2>
+              <p class="lead">무대, 객석, 콘솔, 백스테이지, 출입 동선의 위치를 한눈에. 도면 PDF는 운영 협의 시 별도 제공됩니다.</p>
+            </div>
+            <div class="section-head__r"><a class="btn ghost" style="background:transparent;color:var(--bg);border-color:rgba(255,255,255,0.4);" href="./contact.html">도면 요청 →</a></div>
+          </div>
+
+          <div class="floorplan">
+            <span class="fp-label">FLOOR PLAN · TYPE A (STANDING)</span>
+            <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="공연장 단면도">
+              <rect x="20" y="20" width="760" height="320" fill="none" stroke="#fff" stroke-width="2" />
+              <!-- stage -->
+              <rect x="40" y="40" width="240" height="160" fill="#faff00" />
+              <text x="160" y="125" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="20" font-weight="900" fill="#0a0a0a">STAGE</text>
+              <text x="160" y="148" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="11" font-weight="700" fill="#0a0a0a">6.6 × 4.3 m</text>
+              <!-- backline -->
+              <rect x="40" y="210" width="240" height="60" fill="none" stroke="#fff" stroke-dasharray="4 4" />
+              <text x="160" y="245" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="11" font-weight="700" fill="#fff">BACKLINE / GEAR</text>
+              <!-- floor -->
+              <rect x="300" y="40" width="380" height="230" fill="none" stroke="#fff" />
+              <text x="490" y="155" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="18" font-weight="900" fill="#fff">FLOOR · 객석</text>
+              <text x="490" y="178" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,0.7)">스탠딩 ~140 / 좌석 60–70</text>
+              <!-- FOH -->
+              <rect x="560" y="200" width="100" height="60" fill="#ff2d2d" />
+              <text x="610" y="235" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="11" font-weight="800" fill="#fff">FOH 콘솔</text>
+              <!-- bar -->
+              <rect x="700" y="40" width="60" height="230" fill="none" stroke="#fff" />
+              <text x="730" y="160" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="11" font-weight="700" fill="#fff" transform="rotate(-90 730 160)">BAR / 클로크</text>
+              <!-- backstage -->
+              <rect x="40" y="280" width="240" height="60" fill="none" stroke="#fff" />
+              <text x="160" y="315" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="11" font-weight="700" fill="#fff">BACKSTAGE · 대기실</text>
+              <!-- entry -->
+              <rect x="300" y="290" width="380" height="50" fill="none" stroke="#fff" />
+              <text x="490" y="320" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="11" font-weight="800" fill="#fff">ENTRY · 입장 / 매표</text>
+              <!-- gate -->
+              <rect x="370" y="280" width="80" height="14" fill="#ff2d2d" />
+              <text x="410" y="291" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="9" font-weight="800" fill="#fff">GATE</text>
+            </svg>
+            <span class="fp-legend">
+              <span><i class="stage"></i>STAGE</span>
+              <span><i class="fl"></i>FLOOR / BACK</span>
+              <span><i class="gate"></i>FOH · GATE</span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 문의 채널 재강조 -->
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Talk to us</p>
+              <h2>이 공간이 맞다면?</h2>
+              <p class="lead">스펙이 행사에 맞는다면 가능 일정과 함께 바로 문의해 주세요.</p>
+            </div>
+            <div class="section-head__r"><span class="num">— 05</span></div>
+          </div>
+
+          <div class="channels">
+            <a target="_blank" rel="noopener" href="http://pf.kakao.com/_UpUKX">
+              <span class="ch-tag">Kakao</span><span class="ch-name">카카오톡 →</span><span class="ch-desc">가장 빠른 1차 상담</span>
+            </a>
+            <a target="_blank" rel="noopener" href="https://www.instagram.com/backline_stage_official/">
+              <span class="ch-tag">Instagram</span><span class="ch-name">@backline_stage_official →</span><span class="ch-desc">공간 무드 확인</span>
+            </a>
+            <a href="./schedule.html">
+              <span class="ch-tag">Calendar</span><span class="ch-name">대관 일정 →</span><span class="ch-desc">가능 날짜 먼저 확인</span>
+            </a>
+            <a href="./contact.html">
+              <span class="ch-tag">Form</span><span class="ch-name">대관 신청서 →</span><span class="ch-desc">정식 접수 폼</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <div class="cta__inner">
+          <div>
+            <p class="eyebrow" style="color: rgba(255,255,255,0.7);">Next step</p>
+            <h2>스펙이 맞으면 다음은 <span class="acc">일정</span>.</h2>
+            <p>희망 날짜와 행사 유형만 정리되어 있어도 회신이 빠릅니다. 캘린더 먼저 확인해 보세요.</p>
+          </div>
+          <div class="cta__actions">
+            <a class="btn hot" href="./schedule.html">대관 일정 보기 →</a>
+            <a class="btn ghost" href="./contact.html">문의하기</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__top">
+          <div class="site-footer__brand">
+            <div class="logo-line">
+              <img src="./assets/brand/original-white/logo-white.png" width="3243" height="2238" alt="" />
+              <strong>Backline Stage</strong>
+            </div>
+            <p>밴드와 아티스트를 위한 라이브 공연장.</p>
+          </div>
+          <div>
+            <h4>Site</h4>
+            <ul>
+              <li><a href="./index.html">홈</a></li>
+              <li><a href="./rental.html">대관 안내</a></li>
+              <li><a href="./schedule.html">대관 일정</a></li>
+              <li><a href="./gallery.html">갤러리</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li><a target="_blank" rel="noopener" href="http://pf.kakao.com/_UpUKX">Kakao 채널</a></li>
+              <li><a target="_blank" rel="noopener" href="https://www.instagram.com/backline_stage_official/">Instagram</a></li>
+              <li><a href="mailto:BacklineStageOfficial@gmail.com">Email</a></li>
+              <li><a href="./contact.html">대관 신청서</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Visit</h4>
+            <ul>
+              <li><a href="./location.html">오시는 길</a></li>
+              <li><a target="_blank" rel="noopener" href="https://map.kakao.com/link/map/Backline%20Stage,37.5510009887565,126.924016871226">카카오맵</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bot">
+          <span>© Backline Stage</span>
+          <span>대표자: 정운화 · 오원석</span>
+          <span><a href="mailto:BacklineStageOfficial@gmail.com">BacklineStageOfficial@gmail.com</a></span>
+        </div>
+      </div>
+    </footer>
+    <script>
+      (() => {
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        document.querySelectorAll("[data-venue-carousel]").forEach((carousel) => {
+          const slides = [...carousel.querySelectorAll("[data-carousel-slide]")];
+          const dots = [...carousel.querySelectorAll("[data-carousel-dot]")];
+          const prevButton = carousel.querySelector("[data-carousel-prev]");
+          const nextButton = carousel.querySelector("[data-carousel-next]");
+          const progress = carousel.querySelector("[data-carousel-progress]");
+          const intervalMs = 4000;
+          let current = 0;
+          let timerId = null;
+
+          const setProgress = () => {
+            if (!progress) return;
+            progress.style.animation = "none";
+            void progress.offsetHeight;
+            progress.style.animation = prefersReducedMotion ? "none" : "venue-carousel-progress 4s linear infinite";
+          };
+
+          const render = () => {
+            const last = slides.length - 1;
+            const prev = current === 0 ? last : current - 1;
+            const next = current === last ? 0 : current + 1;
+
+            slides.forEach((slide, index) => {
+              slide.classList.toggle("is-active", index === current);
+              slide.classList.toggle("is-prev", index === prev);
+              slide.classList.toggle("is-next", index === next);
+              slide.classList.toggle("is-hidden", index !== current && index !== prev && index !== next);
+              slide.setAttribute("aria-hidden", index === current ? "false" : "true");
+            });
+
+            dots.forEach((dot, index) => {
+              dot.classList.toggle("is-active", index === current);
+              dot.setAttribute("aria-current", index === current ? "true" : "false");
+            });
+
+            setProgress();
+          };
+
+          const goTo = (index) => {
+            current = (index + slides.length) % slides.length;
+            render();
+            start();
+          };
+
+          const start = () => {
+            window.clearInterval(timerId);
+            if (!prefersReducedMotion) {
+              timerId = window.setInterval(() => goTo(current + 1), intervalMs);
+            }
+          };
+
+          prevButton?.addEventListener("click", () => goTo(current - 1));
+          nextButton?.addEventListener("click", () => goTo(current + 1));
+          dots.forEach((dot, index) => dot.addEventListener("click", () => goTo(index)));
+
+          document.addEventListener("visibilitychange", () => {
+            if (document.hidden) {
+              window.clearInterval(timerId);
+            } else {
+              start();
+            }
+          });
+
+          render();
+          start();
+        });
+      })();
+    </script>
+  </body>
+</html>
