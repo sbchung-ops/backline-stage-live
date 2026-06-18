@@ -1,5 +1,6 @@
 (async () => {
   const defaults = {
+    phone: "010-3402-4358",
     email: "BacklineStageOfficial@gmail.com",
     kakao_url: "http://pf.kakao.com/_UpUKX",
     instagram_url: "https://www.instagram.com/backline_stage_official/",
@@ -11,7 +12,10 @@
     representative: "정운화 · 오원석",
   };
 
-  const [settings, venue] = await Promise.all([readJson("/api/settings"), readJson("/api/venue")]);
+  const apiDisabled = window.BACKLINE_API_DISABLED === true;
+  const [settings, venue] = apiDisabled
+    ? [null, null]
+    : await Promise.all([readJson("/api/settings"), readJson("/api/venue")]);
   if (settings) applySettings({ ...defaults, ...settings });
   if (venue) applyVenue(venue);
 
@@ -27,6 +31,7 @@
 
   function applySettings(settings) {
     const email = clean(settings.email) || defaults.email;
+    const phone = clean(settings.phone) || defaults.phone;
     const kakao = clean(settings.kakao_url) || defaults.kakao_url;
     const instagram = clean(settings.instagram_url) || defaults.instagram_url;
     const youtube = clean(settings.youtube_url) || defaults.youtube_url;
@@ -37,11 +42,13 @@
     const representative = clean(settings.representative) || defaults.representative;
 
     setLinks('a[href^="mailto:"]', `mailto:${email}`);
+    setLinks('a[href^="tel:"]', `tel:${phone.replace(/[^\d+]/g, "")}`);
     setLinks('a[href*="pf.kakao.com"]', kakao);
     setLinks('a[href*="instagram.com"]', instagram);
     setLinks('a[href*="youtube.com/@BacklineStage"]', youtube);
     setLinks('a[href*="youtube.com/playlist"]', playlist);
     setTextMatches(defaults.email, email);
+    setTextMatches(defaults.phone, phone);
     setTextMatches("대표자: 정운화 · 오원석", `대표자: ${representative}`);
 
     document.querySelectorAll('[data-bind="venue.address"], .addr-link').forEach((node) => {
@@ -76,8 +83,10 @@
   function applyVenue(venue) {
     const replacements = {
       "최대 140명": venue.capacity,
+      "스탠딩 150명": venue.capacity,
       "6.6 × 4.3 m": venue.stage_size,
       "Live PA · LIGHT": [venue.sound, venue.light].filter(Boolean).join(" · "),
+      "X32 · d&b PA": [venue.sound, venue.light].filter(Boolean).join(" · "),
     };
 
     for (const [from, to] of Object.entries(replacements)) {
