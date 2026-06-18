@@ -1734,9 +1734,16 @@ p, li, th, td, small, .lead { word-break: keep-all; overflow-wrap: break-word; }
   transition: background 0.15s ease;
 }
 .yt-grid .yt-item:hover { background: rgba(255,255,255,0.08); }
-.yt-grid .yt-item img { aspect-ratio: 16/9; object-fit: cover; }
+.yt-grid .yt-item img { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: rgba(255,255,255,0.08); }
 .yt-grid .yt-item .yt-title { font-size: 13px; font-weight: 700; line-height: 1.4; }
 .yt-grid .yt-item .yt-cat { font-size: 10px; color: rgba(255,255,255,0.6); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+.yt-status {
+  margin-top: 12px;
+  color: var(--ink-3);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
 
 .masonry {
   column-count: 3;

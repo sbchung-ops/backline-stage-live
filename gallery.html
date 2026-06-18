@@ -12,6 +12,7 @@
 <link rel="icon" type="image/png" href="./assets/brand/mascot-face.png" />
     <link rel="stylesheet" href="./styles.css" />
     <script defer src="./page-transitions.js"></script>
+    <script defer src="./gallery-youtube.js"></script>
     <meta name="description" content="Backline Stage 공연 영상, 유튜브 플레이리스트, 현장 사진을 모아보는 갤러리입니다." />
     <link rel="canonical" href="https://sbchung-ops.github.io/backline-stage-live/gallery.html" />
     <meta property="og:site_name" content="Backline Stage" />
@@ -70,7 +71,7 @@
             <div>
               <p class="eyebrow">YouTube · Live</p>
               <h2>공연 영상.</h2>
-              <p class="lead">대표 라이브 영상과 최근 업로드. 유튜브 채널에서 더 많은 영상을 확인할 수 있습니다.</p>
+              <p class="lead">대표 라이브 영상과 최근 업로드를 자동으로 불러옵니다. 유튜브 채널에서 더 많은 영상을 확인할 수 있습니다.</p>
             </div>
             <div class="section-head__r">
               <a class="btn" style="background:var(--bg);border-color:var(--bg);color:var(--ink);" target="_blank" rel="noopener" href="https://www.youtube.com/@BacklineStage">유튜브 채널 ↗</a>
@@ -80,6 +81,7 @@
           <div class="yt-grid">
             <div class="yt-main">
               <iframe
+                data-youtube-featured
                 title="Backline Stage 대표 라이브"
                 src="https://www.youtube.com/embed/videoseries?list=PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd&rel=0&modestbranding=1"
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -87,7 +89,7 @@
                 loading="lazy"
               ></iframe>
             </div>
-            <div class="yt-list" aria-label="유튜브 재생 목록">
+            <div class="yt-list" data-youtube-list aria-label="유튜브 최근 영상">
               <a class="yt-item" target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd">
                 <img src="./assets/poster-06.png" alt="" />
                 <div>
@@ -118,6 +120,7 @@
               </a>
             </div>
           </div>
+          <p class="yt-status" data-youtube-status>최근 영상 목록을 불러오는 중입니다.</p>
         </div>
       </section>
 

@@ -1,0 +1,73 @@
+name: Update YouTube videos
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: youtube-videos-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      YOUTUBE_PLAYLIST_ID: PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd
+      YOUTUBE_CHANNEL_HANDLE: BacklineStage
+      YOUTUBE_VIDEO_LIMIT: "8"
+      SITE_URL: https://sbchung-ops.github.io/backline-stage-live
+      LIVE_REPO: sbchung-ops/backline-stage-live
+      BACKLINE_STAGE_LIVE_TOKEN: ${{ secrets.BACKLINE_STAGE_LIVE_TOKEN }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch YouTube video data
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: node tools/fetch-youtube-videos.mjs
+
+      - name: Commit video data
+        id: commit_data
+        shell: bash
+        run: |
+          if [[ -z "$(git status --porcelain assets/youtube-videos.json)" ]]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/youtube-videos.json
+          git commit -m "Update YouTube video data"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy source build to live repo
+        if: ${{ env.BACKLINE_STAGE_LIVE_TOKEN != '' }}
+        shell: bash
+        run: |
+          npm ci
+          SITE_URL="$SITE_URL" npm run build
+
+          git clone "https://x-access-token:${BACKLINE_STAGE_LIVE_TOKEN}@github.com/${LIVE_REPO}.git" ../backline-stage-live
+          find ../backline-stage-live -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          rsync -a --exclude='admin/' --exclude='_headers' --exclude='_redirects' --exclude='H3A7NZ.DOCX' dist/ ../backline-stage-live/
+          touch ../backline-stage-live/.nojekyll
+
+          cd ../backline-stage-live
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Deploy YouTube video data" || exit 0
+          git push

@@ -1,0 +1,17 @@
+{
+  "provider": "manual-fallback",
+  "playlistId": "PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd",
+  "updatedAt": "2026-06-18T00:00:00.000Z",
+  "videos": [
+    {
+      "id": "videoseries",
+      "title": "Backline Stage 유튜브 플레이리스트",
+      "description": "Backline Stage 유튜브 플레이리스트",
+      "url": "https://www.youtube.com/playlist?list=PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd",
+      "embedUrl": "https://www.youtube.com/embed/videoseries?list=PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd&rel=0&modestbranding=1",
+      "thumbnail": "./assets/poster-06.png",
+      "publishedAt": "2026-06-18T00:00:00.000Z",
+      "channelTitle": "Backline Stage"
+    }
+  ]
+}
