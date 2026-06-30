@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href="../assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" as="image" href="../assets/brand/original-white/logo-white.png" />
+    <link rel="icon" type="image/png" href="../assets/brand/mascot-face.png" />
+    <title>관리자 | Backline Stage</title>
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body>
+    <header class="admin-header">
+      <div class="admin-header__inner">
+        <a class="brand" href="./" aria-label="Backline Stage 관리자 홈">
+          <img src="../assets/brand/original-white/logo-white.png" width="3243" height="2238" alt="" />
+          <span>Backline Stage Admin</span>
+        </a>
+        <nav class="admin-toplinks" aria-label="관리자 바로가기">
+          <a href="../index.html" target="_blank" rel="noopener">사이트 보기 ↗</a>
+          <a href="/cdn-cgi/access/logout" id="logout">로그아웃</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="admin-shell">
+      <section class="admin-hero">
+        <div>
+          <p class="eyebrow">Backline control room</p>
+          <h1>사이트 내용을<br /><span>한 곳에서 수정.</span></h1>
+          <p class="lead">링크, 연락처, 공연장 정보, 공지, 포스터 이미지를 운영자가 직접 관리하는 관리자 페이지입니다.</p>
+        </div>
+        <div class="admin-status" aria-label="관리 상태 요약">
+          <article>
+            <span>MODE</span>
+            <strong>Protected</strong>
+          </article>
+          <article>
+            <span>PATH</span>
+            <strong>/admin</strong>
+          </article>
+          <article>
+            <span>API</span>
+            <strong>/api/admin</strong>
+          </article>
+        </div>
+      </section>
+
+      <div id="flash" aria-live="polite"></div>
+
+      <div class="admin-layout">
+        <aside class="admin-sidebar">
+          <p class="sidebar-k">EDIT MENU</p>
+          <nav class="admin-tabs" id="tabs" aria-label="관리 메뉴">
+            <button class="is-active" data-tab="links" type="button">
+              <span>01</span> 링크·연락처
+            </button>
+            <button data-tab="venue" type="button">
+              <span>02</span> 공연장 정보
+            </button>
+            <button data-tab="images" type="button">
+              <span>03</span> 이미지·포스터
+            </button>
+            <button data-tab="notices" type="button">
+              <span>04</span> 공지·뉴스
+            </button>
+          </nav>
+        </aside>
+
+        <section class="admin-content">
+          <section class="admin-panel is-active" data-panel="links">
+            <div class="panel-head">
+              <p class="eyebrow">Links / contact</p>
+              <h2>외부 링크와 기본 정보를 수정합니다.</h2>
+            </div>
+
+            <div class="card">
+              <div class="card-head">
+                <h3>연락처 · 주소</h3>
+                <p>푸터, 문의, 오시는 길에 쓰이는 기본 정보입니다.</p>
+              </div>
+              <form id="settings-form-contact" class="field-grid">
+                <label>대표 전화<input name="phone" autocomplete="tel" /></label>
+                <label>이메일<input name="email" type="email" autocomplete="email" /></label>
+                <label>대표자명<input name="representative" /></label>
+                <label>사업자등록번호<input name="business_no" /></label>
+                <label class="full">실제 주소<input name="address" /></label>
+                <label>위도<input name="latitude" type="number" step="0.0000000000001" /></label>
+                <label>경도<input name="longitude" type="number" step="0.0000000000001" /></label>
+                <div class="full row-actions">
+                  <button class="btn hot" type="submit">정보 저장 →</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="card">
+              <div class="card-head">
+                <h3>SNS · 신청 링크</h3>
+                <p>카카오톡, 인스타그램, 유튜브, 폼/캘린더/지도 임베드 주소를 관리합니다.</p>
+              </div>
+              <form id="settings-form-links" class="field-grid">
+                <label class="full">카카오톡 채널 URL<input name="kakao_url" placeholder="http://pf.kakao.com/_UpUKX" /></label>
+                <label class="full">인스타그램 URL<input name="instagram_url" placeholder="https://www.instagram.com/backline_stage_official/" /></label>
+                <label class="full">유튜브 채널 URL<input name="youtube_url" placeholder="https://www.youtube.com/@BacklineStage" /></label>
+                <label class="full">유튜브 플레이리스트 URL<input name="youtube_playlist_url" placeholder="https://www.youtube.com/playlist?list=PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd" /></label>
+                <label class="full">구글 캘린더 iframe src<input name="google_calendar_src" /></label>
+                <label class="full">구글 폼 iframe src<input name="google_form_src" /></label>
+                <label class="full">카카오맵 iframe src<input name="kakao_map_src" /></label>
+                <div class="full row-actions">
+                  <button class="btn hot" type="submit">링크 저장 →</button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <section class="admin-panel" data-panel="venue">
+            <div class="panel-head">
+              <p class="eyebrow">Venue data</p>
+              <h2>공연장 소개와 스펙 값을 관리합니다.</h2>
+            </div>
+
+            <div class="card">
+              <form id="venue-form" class="field-grid">
+                <label class="full">공연장 명<input name="name" /></label>
+                <label class="full">한 줄 소개<input name="tagline" /></label>
+                <label>수용 인원<input name="capacity" /></label>
+                <label>무대 사이즈<input name="stage_size" /></label>
+                <label>음향<input name="sound" /></label>
+                <label>조명<input name="light" /></label>
+                <label class="full">장비 리스트 <small>한 줄에 하나씩 입력</small>
+                  <textarea name="equipment_text" rows="7" placeholder="Behringer X32 Full Size&#10;d&amp;b E12 × 2&#10;Sennheiser EW IEM G4 TWIN ★"></textarea>
+                </label>
+                <label class="full">평면도/단면도 이미지 URL<input name="floorplan_url" /></label>
+                <label class="full">상세 설명<textarea name="body" rows="5"></textarea></label>
+                <div class="full row-actions">
+                  <button class="btn hot" type="submit">공연장 정보 저장 →</button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <section class="admin-panel" data-panel="images">
+            <div class="panel-head">
+              <p class="eyebrow">Images / posters</p>
+              <h2>공연 포스터와 갤러리 이미지를 관리합니다.</h2>
+            </div>
+
+            <div class="card split-card">
+              <div class="card-head">
+                <h3>새 이미지 업로드</h3>
+                <p>5MB 이하 jpg, png, webp 파일을 등록합니다.</p>
+              </div>
+              <form id="poster-form" class="field-grid">
+                <label>제목<input name="title" required placeholder="BAND NIGHT vol.4" /></label>
+                <label>날짜<input name="date" type="date" required /></label>
+                <label class="full">이미지 파일<input name="file" type="file" accept="image/*" required /></label>
+                <div class="full row-actions">
+                  <button class="btn hot" type="submit">업로드 →</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="list-head">
+              <h3>등록된 이미지</h3>
+              <button class="btn ghost" type="button" data-action="refresh-posters">새로고침</button>
+            </div>
+            <div class="poster-list" id="poster-list"></div>
+          </section>
+
+          <section class="admin-panel" data-panel="notices">
+            <div class="panel-head">
+              <p class="eyebrow">Notice board</p>
+              <h2>홈과 공지 영역에 표시할 소식을 관리합니다.</h2>
+            </div>
+
+            <div class="card">
+              <div class="card-head">
+                <h3>새 공지 작성</h3>
+                <p>중요 공지는 고정으로 등록할 수 있습니다.</p>
+              </div>
+              <form id="notice-form" class="field-grid">
+                <label>제목<input name="title" required /></label>
+                <label>노출 상태
+                  <select name="pinned">
+                    <option value="false">일반</option>
+                    <option value="true">상단 고정</option>
+                  </select>
+                </label>
+                <label class="full">두 줄 미리보기<textarea name="body_short" maxlength="160" rows="2"></textarea></label>
+                <label class="full">상세 내용<textarea name="body" rows="5"></textarea></label>
+                <div class="full row-actions">
+                  <button class="btn hot" type="submit">공지 등록 →</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="list-head">
+              <h3>등록된 공지</h3>
+              <button class="btn ghost" type="button" data-action="refresh-notices">새로고침</button>
+            </div>
+            <div class="notice-list" id="notice-list"></div>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="./admin.js"></script>
+  </body>
+</html>

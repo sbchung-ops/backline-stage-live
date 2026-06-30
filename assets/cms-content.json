@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "provider": "wordpress",
+  "sourceUrl": "http://localhost:8080/wp-json/backline/v1/content",
+  "fetchedAt": "2026-06-30T04:36:23.534Z",
+  "settings": {
+    "phone": "010-3402-4358",
+    "email": "BacklineStageOfficial@gmail.com",
+    "kakao_url": "http://pf.kakao.com/_UpUKX",
+    "instagram_url": "https://www.instagram.com/backline_stage_official/",
+    "youtube_url": "https://www.youtube.com/@BacklineStage",
+    "youtube_playlist_url": "https://www.youtube.com/playlist?list=PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd",
+    "address": "서울 마포구 와우산로 18길 20 지하1층",
+    "naver_map_url": "https://map.naver.com/p/search/서울%20마포구%20와우산로%2018길%2020%20지하1층",
+    "latitude": 37.5510009887565,
+    "longitude": 126.924016871226,
+    "representative": "정운화 · 오원석",
+    "contact_note": "푸터, 문의, 오시는 길에 공통으로 사용하는 연락처입니다."
+  },
+  "photos": [
+    {
+      "title": "Stage front",
+      "image": {
+        "url": "./assets/hero-reference-style.png",
+        "alt": "공연장 무대"
+      },
+      "category": "STAGE"
+    },
+    {
+      "title": "Poster 01",
+      "image": {
+        "url": "./assets/poster-01.png",
+        "alt": "공연 포스터"
+      },
+      "category": "POSTER"
+    },
+    {
+      "title": "Live mood",
+      "image": {
+        "url": "./assets/hero.jpg",
+        "alt": "공연 현장"
+      },
+      "category": "LIVE"
+    },
+    {
+      "title": "Poster 02",
+      "image": {
+        "url": "./assets/poster-02.png",
+        "alt": "공연 포스터"
+      },
+      "category": "POSTER"
+    },
+    {
+      "title": "Venue",
+      "image": {
+        "url": "./assets/venue-hero.png",
+        "alt": "공연장 외부"
+      },
+      "category": "VENUE"
+    },
+    {
+      "title": "Poster 03",
+      "image": {
+        "url": "./assets/poster-03.png",
+        "alt": "공연 포스터"
+      },
+      "category": "POSTER"
+    },
+    {
+      "title": "Stage concept",
+      "image": {
+        "url": "./assets/stage-concept.png",
+        "alt": "무대 컨셉"
+      },
+      "category": "CONCEPT"
+    },
+    {
+      "title": "Poster 04",
+      "image": {
+        "url": "./assets/poster-04.png",
+        "alt": "공연 포스터"
+      },
+      "category": "POSTER"
+    },
+    {
+      "title": "Poster 05",
+      "image": {
+        "url": "./assets/poster-05.png",
+        "alt": "공연 포스터"
+      },
+      "category": "POSTER"
+    },
+    {
+      "title": "Poster 06",
+      "image": {
+        "url": "./assets/poster-06.png",
+        "alt": "공연 포스터"
+      },
+      "category": "POSTER"
+    },
+    {
+      "title": "Poster 07",
+      "image": {
+        "url": "./assets/poster-07.png",
+        "alt": "공연 포스터"
+      },
+      "category": "POSTER"
+    },
+    {
+      "title": "Poster 08",
+      "image": {
+        "url": "./assets/poster-08.png",
+        "alt": "공연 포스터"
+      },
+      "category": "POSTER"
+    }
+  ],
+  "equipment": [
+    {
+      "category": "PA · Sound",
+      "title": "FOH / Monitor",
+      "items": [
+        "Behringer X32 Full Size · S16 Stage I/O x 2",
+        "d&b E12 Main x 2 · Vi-GSUB x 2",
+        "dB Technologies LVX P8 Front Fill x 3",
+        "dB Technologies LVX P12 Monitor x 2"
+      ]
+    },
+    {
+      "category": "Monitor · DI",
+      "title": "IEM / Direct box",
+      "items": [
+        "Sennheiser EW IEM G4 TWIN 1 SET",
+        "Behringer P2 wired in-ear x 6",
+        "Shure SE215 wired in-ear x 8",
+        "RADIAL JDI Stereo x 2 · PRO D2 x 1 · J48 x 1"
+      ]
+    },
+    {
+      "category": "Mic · Sound",
+      "title": "Microphone",
+      "items": [
+        "AKG Drum Set Session I · Sennheiser e902",
+        "sE Electronics sE7 MP",
+        "Shure SM57 x 3 · Shure Beta58A x 3",
+        "Sennheiser EW-D 835 wireless mic x 2"
+      ]
+    },
+    {
+      "category": "Backline · Instrument",
+      "title": "Drum / Amp / Keys",
+      "items": [
+        "Gretsch RN-2 Drum · Zildjian K Sweet Cymbal Set",
+        "Ashdown ABM-600 EVO IV · ABM-410H EVO-20",
+        "Marshall JVM-410H · JCM900 4100 · 1960A Cabinet x 2",
+        "Yamaha CP88 · Yamaha MODX M7 · Boss FV-500L"
+      ]
+    },
+    {
+      "category": "Light",
+      "title": "Console / Fixture",
+      "items": [
+        "MA Lighting Grand MA2 ONPC Command Wing",
+        "Favorite LED Vader 250 Moving Spot",
+        "BEAM 230 x 4 · Favorite LED 740B x 8",
+        "LED COB WHITE 200 x 4 · Aegis Pro FZ-2.5C x 2"
+      ]
+    },
+    {
+      "category": "Option · Consult",
+      "title": "Additional operation",
+      "items": [
+        "Wireless in-ear 35,000 KRW / 1CH",
+        "Wireless mic 50,000 KRW / 1EA",
+        "Wired in-ear 20,000 KRW / 1EA",
+        "Additional equipment can be discussed by event format"
+      ]
+    }
+  ],
+  "notices": [],
+  "sources": {
+    "settings": "cms",
+    "photos": "fallback",
+    "equipment": "fallback",
+    "notices": "fallback"
+  },
+  "warnings": [
+    "CMS equipment has 1 item(s); keeping fallback equipment until at least 3."
+  ],
+  "generatedAt": "2026-06-30T04:36:23+00:00",
+  "counts": {
+    "cmsSettings": 1,
+    "cmsPhotos": 0,
+    "cmsEquipment": 1,
+    "cmsNotices": 0
+  }
+}
