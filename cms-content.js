@@ -39,6 +39,8 @@
     const instagram = clean(settings.instagram_url);
     const youtube = clean(settings.youtube_url);
     const playlist = clean(settings.youtube_playlist_url);
+    const applicationForm = toGoogleFormViewUrl(clean(settings.application_form_url || settings.rental_form_url || settings.google_form_url));
+    const applicationFormEmbed = clean(settings.application_form_embed_url) || toGoogleFormEmbedUrl(applicationForm);
     const address = clean(settings.address);
     const representative = clean(settings.representative);
     const lat = Number(settings.latitude);
@@ -59,6 +61,8 @@
     if (instagram) setLinks('a[href*="instagram.com"]', instagram);
     if (youtube) setLinks('a[href*="youtube.com/@BacklineStage"]', youtube);
     if (playlist) setLinks('a[href*="youtube.com/playlist"]', playlist);
+    if (applicationForm) setLinks('a[href*="docs.google.com/forms"]', applicationForm);
+    if (applicationFormEmbed) setFormEmbeds(applicationFormEmbed);
 
     if (representative) {
       replaceText("대표자: 정운화 · 오원석", `대표자: ${representative}`);
@@ -162,11 +166,11 @@
 
   function applyVenueCarousel(photos) {
     const carousel = document.querySelector("[data-venue-carousel]");
-    if (!carousel || photos.length < 3) return;
+    if (!carousel || !photos.length) return;
 
     const slides = [...carousel.querySelectorAll("[data-carousel-slide]")];
     slides.forEach((slide, index) => {
-      const photo = photos[index];
+      const photo = photos[index % photos.length];
       if (!photo) return;
 
       const img = slide.querySelector("img");
@@ -242,7 +246,7 @@
 
   function applyGalleryPhotos(photos) {
     const masonry = document.querySelector(".masonry");
-    if (!masonry || photos.length < 3) return;
+    if (!masonry || !photos.length) return;
 
     masonry.innerHTML = photos
       .map((photo) => {
@@ -275,6 +279,42 @@
     document.querySelectorAll(selector).forEach((node) => {
       node.href = href;
     });
+  }
+
+  function setFormEmbeds(src) {
+    document.querySelectorAll('iframe[src*="docs.google.com/forms"], iframe[data-form-src*="docs.google.com/forms"]').forEach((node) => {
+      node.src = src;
+      node.dataset.formSrc = src;
+    });
+  }
+
+  function toGoogleFormEmbedUrl(url) {
+    if (!url) return "";
+
+    try {
+      const embedUrl = new URL(url, document.baseURI);
+      if (!embedUrl.hostname.includes("docs.google.com") || !embedUrl.pathname.includes("/forms/")) return url;
+      embedUrl.search = "embedded=true";
+      return embedUrl.toString();
+    } catch {
+      return url;
+    }
+  }
+
+  function toGoogleFormViewUrl(url) {
+    if (!url) return "";
+
+    try {
+      const viewUrl = new URL(url, document.baseURI);
+      if (!viewUrl.hostname.includes("docs.google.com") || !viewUrl.pathname.includes("/forms/")) return url;
+      if (viewUrl.searchParams.has("embedded")) {
+        viewUrl.searchParams.delete("embedded");
+        if (!viewUrl.search) viewUrl.searchParams.set("usp", "header");
+      }
+      return viewUrl.toString();
+    } catch {
+      return url;
+    }
   }
 
   function replaceText(from, to) {
