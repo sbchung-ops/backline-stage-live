@@ -21,6 +21,7 @@ jobs:
       YOUTUBE_VIDEO_LIMIT: "8"
       SITE_URL: https://sbchung-ops.github.io/backline-stage-live
       LIVE_REPO: sbchung-ops/backline-stage-live
+      CMS_API_URL: ${{ secrets.CMS_API_URL }}
       BACKLINE_STAGE_LIVE_TOKEN: ${{ secrets.BACKLINE_STAGE_LIVE_TOKEN }}
 
     steps:
@@ -58,11 +59,15 @@ jobs:
         shell: bash
         run: |
           npm ci
-          SITE_URL="$SITE_URL" npm run build
+          if [[ -n "$CMS_API_URL" ]]; then
+            CMS_FETCH=1 CMS_REQUIRED=1 SITE_URL="$SITE_URL" npm run build
+          else
+            SITE_URL="$SITE_URL" npm run build
+          fi
 
           git clone "https://x-access-token:${BACKLINE_STAGE_LIVE_TOKEN}@github.com/${LIVE_REPO}.git" ../backline-stage-live
           find ../backline-stage-live -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
-          rsync -a --exclude='admin/' --exclude='_headers' --exclude='_redirects' --exclude='H3A7NZ.DOCX' dist/ ../backline-stage-live/
+          rsync -a --delete --exclude='.git/' --exclude='*.DOCX' dist/ ../backline-stage-live/
           touch ../backline-stage-live/.nojekyll
 
           cd ../backline-stage-live

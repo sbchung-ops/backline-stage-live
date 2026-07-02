@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "provider": "wordpress",
-  "sourceUrl": "http://localhost:8080/wp-json/backline/v1/content",
-  "fetchedAt": "2026-06-30T04:36:23.534Z",
+  "provider": "static-fallback",
+  "sourceUrl": "",
+  "fetchedAt": null,
   "settings": {
     "phone": "010-3402-4358",
     "email": "BacklineStageOfficial@gmail.com",
@@ -14,10 +14,61 @@
     "naver_map_url": "https://map.naver.com/p/search/서울%20마포구%20와우산로%2018길%2020%20지하1층",
     "latitude": 37.5510009887565,
     "longitude": 126.924016871226,
-    "representative": "정운화 · 오원석",
-    "contact_note": "푸터, 문의, 오시는 길에 공통으로 사용하는 연락처입니다."
+    "representative": "정운화 · 오원석"
   },
-  "photos": [
+  "sections": {
+    "about_stage": {
+      "eyebrow": "",
+      "heading": "밴드를\n위한 무대.",
+      "body": "Backline Stage는 밴드 라이브의 질감과 현장감을 가까이 담아내는 작은 무대입니다. 공연, 쇼케이스, 라이브 촬영처럼 밀도 있는 행사에 최적화된 무대형 스튜디오입니다.",
+      "buttonLabel": "이 공간으로 문의 →",
+      "buttonUrl": "./contact.html"
+    },
+    "home_posters": {
+      "eyebrow": "This month · ±5 days",
+      "heading": "이번 달, 무대 위는 이렇게.",
+      "body": "오늘로부터 5일 이내 등록된 공연 포스터를 먼저 보여줍니다. 전체 일정은 캘린더에서 확인하세요.",
+      "buttonLabel": "전체 일정 더보기 →",
+      "buttonUrl": "./schedule.html"
+    },
+    "schedule_posters": {
+      "eyebrow": "Upcoming · Poster gallery",
+      "heading": "예정된 공연.",
+      "body": "캘린더 등록 공연의 포스터입니다. 상세 URL이 확정되기 전까지는 공연 문의로 연결됩니다."
+    },
+    "gallery_images": {
+      "eyebrow": "Image gallery",
+      "heading": "현장 사진.",
+      "body": "공연 현장과 공연장 디테일. 페이지 로딩 속도를 위해 이미지 1장당 5MB로 최적화되어 업로드됩니다."
+    }
+  },
+  "venuePhotos": [
+    {
+      "title": "Stage front",
+      "image": {
+        "url": "./assets/hero-reference-style.png",
+        "alt": "공연장 무대"
+      },
+      "category": "STAGE FRONT"
+    },
+    {
+      "title": "Live mood",
+      "image": {
+        "url": "./assets/hero.jpg",
+        "alt": "공연 현장"
+      },
+      "category": "LIVE MOOD"
+    },
+    {
+      "title": "Backline",
+      "image": {
+        "url": "./assets/venue-hero.png",
+        "alt": "공연장 외부"
+      },
+      "category": "BACKLINE"
+    }
+  ],
+  "galleryPhotos": [
     {
       "title": "Stage front",
       "image": {
@@ -115,6 +166,89 @@
       "category": "POSTER"
     }
   ],
+  "photos": [],
+  "schedules": [
+    {
+      "title": "BAND NIGHT vol.4",
+      "dateBadge": "05.22 FRI",
+      "image": {
+        "url": "./assets/poster-01.png",
+        "alt": "공연 포스터"
+      },
+      "url": "./contact.html",
+      "featured": true
+    },
+    {
+      "title": "SHOWCASE · ARTIST",
+      "dateBadge": "05.24 SUN",
+      "image": {
+        "url": "./assets/poster-02.png",
+        "alt": "공연 포스터"
+      },
+      "url": "./contact.html",
+      "featured": true
+    },
+    {
+      "title": "LOUD · SET LIST",
+      "dateBadge": "05.29 FRI",
+      "image": {
+        "url": "./assets/poster-03.png",
+        "alt": "공연 포스터"
+      },
+      "url": "./contact.html",
+      "featured": true
+    },
+    {
+      "title": "INDIE · TRIPLE",
+      "dateBadge": "06.05 FRI",
+      "image": {
+        "url": "./assets/poster-04.png",
+        "alt": "공연 포스터"
+      },
+      "url": "./contact.html",
+      "featured": true
+    },
+    {
+      "title": "RELEASE PARTY",
+      "dateBadge": "06.07 SUN",
+      "image": {
+        "url": "./assets/poster-05.png",
+        "alt": "공연 포스터"
+      },
+      "url": "./contact.html",
+      "featured": true
+    },
+    {
+      "title": "LIVE FILM SHOOT",
+      "dateBadge": "06.12 FRI",
+      "image": {
+        "url": "./assets/poster-06.png",
+        "alt": "공연 포스터"
+      },
+      "url": "./contact.html",
+      "featured": false
+    },
+    {
+      "title": "FAN MEETING",
+      "dateBadge": "06.14 SUN",
+      "image": {
+        "url": "./assets/poster-07.png",
+        "alt": "공연 포스터"
+      },
+      "url": "./contact.html",
+      "featured": false
+    },
+    {
+      "title": "BAND NIGHT vol.5",
+      "dateBadge": "06.19 FRI",
+      "image": {
+        "url": "./assets/poster-08.png",
+        "alt": "공연 포스터"
+      },
+      "url": "./contact.html",
+      "featured": false
+    }
+  ],
   "equipment": [
     {
       "category": "PA · Sound",
@@ -179,19 +313,15 @@
   ],
   "notices": [],
   "sources": {
-    "settings": "cms",
-    "photos": "fallback",
+    "settings": "fallback",
+    "sections": "fallback",
+    "venuePhotos": "fallback",
+    "galleryPhotos": "fallback",
+    "schedules": "fallback",
     "equipment": "fallback",
     "notices": "fallback"
   },
   "warnings": [
-    "CMS equipment has 1 item(s); keeping fallback equipment until at least 3."
-  ],
-  "generatedAt": "2026-06-30T04:36:23+00:00",
-  "counts": {
-    "cmsSettings": 1,
-    "cmsPhotos": 0,
-    "cmsEquipment": 1,
-    "cmsNotices": 0
-  }
+    "CMS fetch failed: fetch failed"
+  ]
 }

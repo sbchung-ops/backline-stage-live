@@ -17,8 +17,14 @@
       const content = await res.json();
       state.content = content;
       applySettings(content.settings || {});
+      applySections(content.sections || {});
+      if (content.sources?.venuePhotos === "cms") applyVenueCarousel(content.venuePhotos || []);
+      if (content.sources?.schedules === "cms") {
+        applyScheduleGallery(content.schedules || []);
+        applyPosterOrbit(content.schedules || []);
+      }
       if (content.sources?.equipment === "cms") applyEquipment(content.equipment || []);
-      if (content.sources?.photos === "cms") applyPhotos(content.photos || []);
+      if (content.sources?.galleryPhotos === "cms") applyGalleryPhotos(content.galleryPhotos || []);
       state.ready = true;
       document.documentElement.dataset.cmsReady = "true";
     } catch {
@@ -137,7 +143,104 @@
     return [...groups.values()].filter((group) => group.items.length);
   }
 
-  function applyPhotos(photos) {
+  function applySections(sections) {
+    for (const [key, section] of Object.entries(sections)) {
+      const root = document.querySelector(`[data-cms-section="${key}"]`);
+      if (!root) continue;
+
+      setField(root, "eyebrow", section.eyebrow);
+      setField(root, "heading", section.heading, true);
+      setField(root, "body", section.body);
+
+      const button = root.querySelector('[data-cms-field="button"]');
+      if (button) {
+        if (section.buttonLabel) button.textContent = section.buttonLabel;
+        if (section.buttonUrl) button.href = section.buttonUrl;
+      }
+    }
+  }
+
+  function applyVenueCarousel(photos) {
+    const carousel = document.querySelector("[data-venue-carousel]");
+    if (!carousel || photos.length < 3) return;
+
+    const slides = [...carousel.querySelectorAll("[data-carousel-slide]")];
+    slides.forEach((slide, index) => {
+      const photo = photos[index];
+      if (!photo) return;
+
+      const img = slide.querySelector("img");
+      const tag = slide.querySelector(".venue-carousel__tag");
+      const image = photo.image || {};
+
+      if (img && image.url) {
+        img.src = image.url;
+        img.alt = image.alt || photo.caption || photo.title || "Backline Stage venue photo";
+      }
+
+      if (tag) tag.textContent = photo.caption || photo.category || photo.title || `PHOTO ${index + 1}`;
+      slide.setAttribute("aria-label", `${index + 1} / ${slides.length}`);
+    });
+  }
+
+  function applyScheduleGallery(schedules) {
+    const grid = document.querySelector(".poster-gallery");
+    if (!grid || !schedules.length) return;
+
+    grid.innerHTML = schedules
+      .map((item) => {
+        const image = item.image || {};
+        const url = clean(item.url || "./contact.html");
+        const src = clean(image.url);
+        if (!src) return "";
+
+        return `
+          <a class="poster-card" href="${escapeAttr(url)}">
+            <span class="date-badge">${escapeHtml(item.dateBadge || "LIVE")}</span>
+            <img src="${escapeAttr(src)}" alt="${escapeAttr(image.alt || item.title || "공연 포스터")}" loading="lazy" decoding="async" />
+            <span class="meta">${escapeHtml(item.title || "공연 예정")}</span>
+          </a>
+        `;
+      })
+      .join("");
+  }
+
+  function applyPosterOrbit(schedules) {
+    const orbit = document.querySelector("[data-poster-orbit]");
+    if (!orbit) return;
+
+    const featured = schedules.filter((item) => item.featured !== false);
+    const items = (featured.length >= 5 ? featured : schedules).slice(0, 5);
+    if (items.length < 5) return;
+
+    const cards = [...orbit.querySelectorAll("[data-poster-card]")];
+    cards.forEach((card, index) => {
+      const item = items[index];
+      if (!item) return;
+
+      const image = item.image || {};
+      const badge = card.querySelector(".date-badge");
+      const img = card.querySelector("img");
+      const meta = card.querySelector(".meta");
+
+      card.href = clean(item.url || "./schedule.html");
+      card.dataset.title = item.title || "공연 예정";
+      if (badge) badge.textContent = item.dateBadge || `0${index + 1}`;
+      if (img && image.url) {
+        img.src = image.url;
+        img.alt = image.alt || item.title || "공연 포스터";
+      }
+      if (meta) meta.textContent = item.title || "공연 예정";
+    });
+
+    const activeIndex = Math.min(Number.parseInt(orbit.dataset.initialIndex || "2", 10) || 2, items.length - 1);
+    const countLabel = orbit.querySelector("[data-poster-count]");
+    const titleLabel = orbit.querySelector("[data-poster-title]");
+    if (countLabel) countLabel.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(items.length).padStart(2, "0")}`;
+    if (titleLabel) titleLabel.textContent = items[activeIndex]?.title || "";
+  }
+
+  function applyGalleryPhotos(photos) {
     const masonry = document.querySelector(".masonry");
     if (!masonry || photos.length < 3) return;
 
@@ -155,6 +258,17 @@
         `;
       })
       .join("");
+  }
+
+  function setField(root, field, value, allowBreaks = false) {
+    const node = root.querySelector(`[data-cms-field="${field}"]`);
+    if (!node || !clean(value)) return;
+
+    if (allowBreaks) {
+      node.innerHTML = escapeHtml(value).replace(/\n/g, "<br />");
+    } else {
+      node.textContent = value;
+    }
   }
 
   function setLinks(selector, href) {
