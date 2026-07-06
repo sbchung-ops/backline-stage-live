@@ -21,26 +21,26 @@
   "sections": {
     "about_stage": {
       "eyebrow": "",
-      "heading": "밴드를\n위한 무대.",
+      "heading": "밴드를\n위한 무대",
       "body": "Backline Stage는 밴드 라이브의 질감과 현장감을 가까이 담아내는 작은 무대입니다. 공연, 쇼케이스, 라이브 촬영처럼 밀도 있는 행사에 최적화된 무대형 스튜디오입니다.",
       "buttonLabel": "이 공간으로 문의 →",
       "buttonUrl": "./contact.html"
     },
     "home_posters": {
       "eyebrow": "This month · ±5 days",
-      "heading": "이번 달, 무대 위는 이렇게.",
+      "heading": "이번 달, 무대 위는 이렇게",
       "body": "오늘로부터 5일 이내 등록된 공연 포스터를 먼저 보여줍니다. 전체 일정은 캘린더에서 확인하세요.",
       "buttonLabel": "전체 일정 더보기 →",
       "buttonUrl": "./schedule.html"
     },
     "schedule_posters": {
       "eyebrow": "Upcoming · Poster gallery",
-      "heading": "예정된 공연.",
+      "heading": "예정된 공연",
       "body": "캘린더 등록 공연의 포스터입니다. 상세 URL이 확정되기 전까지는 공연 문의로 연결됩니다."
     },
     "gallery_images": {
       "eyebrow": "Image gallery",
-      "heading": "현장 사진.",
+      "heading": "현장 사진",
       "body": "공연 현장과 공연장 디테일. 페이지 로딩 속도를 위해 이미지 1장당 5MB로 최적화되어 업로드됩니다."
     }
   },
