@@ -1,27 +1,32 @@
 {
-  "version": 1,
-  "provider": "static-fallback",
-  "sourceUrl": "",
-  "fetchedAt": null,
+  "provider": "sanity",
+  "updatedAt": "2026-07-08T09:04:04.632Z",
+  "sources": {
+    "settings": "cms",
+    "sections": "cms",
+    "venuePhotos": "cms",
+    "galleryPhotos": "cms",
+    "schedules": "cms",
+    "equipment": "cms",
+    "notices": "cms"
+  },
   "settings": {
     "phone": "010-3402-4358",
     "email": "BacklineStageOfficial@gmail.com",
+    "address": "서울 마포구 와우산로 18길 20 지하1층",
+    "representative": "정운화 · 오원석",
     "kakao_url": "http://pf.kakao.com/_UpUKX",
     "instagram_url": "https://www.instagram.com/backline_stage_official/",
     "youtube_url": "https://www.youtube.com/@BacklineStage",
     "youtube_playlist_url": "https://www.youtube.com/playlist?list=PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd",
     "application_form_url": "https://docs.google.com/forms/d/e/1FAIpQLSclJa4XQfJYC03KPzqHq17zx0yFXQO1G2dSYTsyLQZHat-QrA/viewform?usp=header",
-    "application_form_embed_url": "https://docs.google.com/forms/d/e/1FAIpQLSclJa4XQfJYC03KPzqHq17zx0yFXQO1G2dSYTsyLQZHat-QrA/viewform?embedded=true",
-    "address": "서울 마포구 와우산로 18길 20 지하1층",
-    "naver_map_url": "https://map.naver.com/p/search/서울%20마포구%20와우산로%2018길%2020%20지하1층",
+    "naver_map_url": "https://map.naver.com/p/search/서울 마포구 와우산로 18길 20 지하1층",
     "latitude": 37.5510009887565,
-    "longitude": 126.924016871226,
-    "representative": "정운화 · 오원석"
+    "longitude": 126.924016871226
   },
   "sections": {
     "about_stage": {
-      "eyebrow": "",
-      "heading": "밴드를\n위한 무대",
+      "heading": "밴드를 위한 무대",
       "body": "Backline Stage는 밴드 라이브의 질감과 현장감을 가까이 담아내는 작은 무대입니다. 공연, 쇼케이스, 라이브 촬영처럼 밀도 있는 행사에 최적화된 무대형 스튜디오입니다.",
       "buttonLabel": "이 공간으로 문의 →",
       "buttonUrl": "./contact.html"
@@ -44,286 +49,9 @@
       "body": "공연 현장과 무대의 순간들을 기록합니다."
     }
   },
-  "venuePhotos": [
-    {
-      "title": "Stage front",
-      "image": {
-        "url": "./assets/hero-reference-style.png",
-        "alt": "공연장 무대"
-      },
-      "category": "STAGE FRONT"
-    },
-    {
-      "title": "Live mood",
-      "image": {
-        "url": "./assets/hero.jpg",
-        "alt": "공연 현장"
-      },
-      "category": "LIVE MOOD"
-    },
-    {
-      "title": "Backline",
-      "image": {
-        "url": "./assets/venue-hero.png",
-        "alt": "공연장 외부"
-      },
-      "category": "BACKLINE"
-    }
-  ],
-  "galleryPhotos": [
-    {
-      "title": "Stage front",
-      "image": {
-        "url": "./assets/hero-reference-style.png",
-        "alt": "공연장 무대"
-      },
-      "category": "STAGE"
-    },
-    {
-      "title": "Poster 01",
-      "image": {
-        "url": "./assets/poster-01.png",
-        "alt": "공연 포스터"
-      },
-      "category": "POSTER"
-    },
-    {
-      "title": "Live mood",
-      "image": {
-        "url": "./assets/hero.jpg",
-        "alt": "공연 현장"
-      },
-      "category": "LIVE"
-    },
-    {
-      "title": "Poster 02",
-      "image": {
-        "url": "./assets/poster-02.png",
-        "alt": "공연 포스터"
-      },
-      "category": "POSTER"
-    },
-    {
-      "title": "Venue",
-      "image": {
-        "url": "./assets/venue-hero.png",
-        "alt": "공연장 외부"
-      },
-      "category": "VENUE"
-    },
-    {
-      "title": "Poster 03",
-      "image": {
-        "url": "./assets/poster-03.png",
-        "alt": "공연 포스터"
-      },
-      "category": "POSTER"
-    },
-    {
-      "title": "Stage concept",
-      "image": {
-        "url": "./assets/stage-concept.png",
-        "alt": "무대 컨셉"
-      },
-      "category": "CONCEPT"
-    },
-    {
-      "title": "Poster 04",
-      "image": {
-        "url": "./assets/poster-04.png",
-        "alt": "공연 포스터"
-      },
-      "category": "POSTER"
-    },
-    {
-      "title": "Poster 05",
-      "image": {
-        "url": "./assets/poster-05.png",
-        "alt": "공연 포스터"
-      },
-      "category": "POSTER"
-    },
-    {
-      "title": "Poster 06",
-      "image": {
-        "url": "./assets/poster-06.png",
-        "alt": "공연 포스터"
-      },
-      "category": "POSTER"
-    },
-    {
-      "title": "Poster 07",
-      "image": {
-        "url": "./assets/poster-07.png",
-        "alt": "공연 포스터"
-      },
-      "category": "POSTER"
-    },
-    {
-      "title": "Poster 08",
-      "image": {
-        "url": "./assets/poster-08.png",
-        "alt": "공연 포스터"
-      },
-      "category": "POSTER"
-    }
-  ],
-  "photos": [],
-  "schedules": [
-    {
-      "title": "BAND NIGHT vol.4",
-      "dateBadge": "05.22 FRI",
-      "image": {
-        "url": "./assets/poster-01.png",
-        "alt": "공연 포스터"
-      },
-      "url": "./contact.html",
-      "featured": true
-    },
-    {
-      "title": "SHOWCASE · ARTIST",
-      "dateBadge": "05.24 SUN",
-      "image": {
-        "url": "./assets/poster-02.png",
-        "alt": "공연 포스터"
-      },
-      "url": "./contact.html",
-      "featured": true
-    },
-    {
-      "title": "LOUD · SET LIST",
-      "dateBadge": "05.29 FRI",
-      "image": {
-        "url": "./assets/poster-03.png",
-        "alt": "공연 포스터"
-      },
-      "url": "./contact.html",
-      "featured": true
-    },
-    {
-      "title": "INDIE · TRIPLE",
-      "dateBadge": "06.05 FRI",
-      "image": {
-        "url": "./assets/poster-04.png",
-        "alt": "공연 포스터"
-      },
-      "url": "./contact.html",
-      "featured": true
-    },
-    {
-      "title": "RELEASE PARTY",
-      "dateBadge": "06.07 SUN",
-      "image": {
-        "url": "./assets/poster-05.png",
-        "alt": "공연 포스터"
-      },
-      "url": "./contact.html",
-      "featured": true
-    },
-    {
-      "title": "LIVE FILM SHOOT",
-      "dateBadge": "06.12 FRI",
-      "image": {
-        "url": "./assets/poster-06.png",
-        "alt": "공연 포스터"
-      },
-      "url": "./contact.html",
-      "featured": false
-    },
-    {
-      "title": "FAN MEETING",
-      "dateBadge": "06.14 SUN",
-      "image": {
-        "url": "./assets/poster-07.png",
-        "alt": "공연 포스터"
-      },
-      "url": "./contact.html",
-      "featured": false
-    },
-    {
-      "title": "BAND NIGHT vol.5",
-      "dateBadge": "06.19 FRI",
-      "image": {
-        "url": "./assets/poster-08.png",
-        "alt": "공연 포스터"
-      },
-      "url": "./contact.html",
-      "featured": false
-    }
-  ],
-  "equipment": [
-    {
-      "category": "PA · Sound",
-      "title": "FOH / Monitor",
-      "items": [
-        "Behringer X32 Full Size · S16 Stage I/O x 2",
-        "d&b E12 Main x 2 · Vi-GSUB x 2",
-        "dB Technologies LVX P8 Front Fill x 3",
-        "dB Technologies LVX P12 Monitor x 2"
-      ]
-    },
-    {
-      "category": "Monitor · DI",
-      "title": "IEM / Direct box",
-      "items": [
-        "Sennheiser EW IEM G4 TWIN 1 SET",
-        "Behringer P2 wired in-ear x 6",
-        "Shure SE215 wired in-ear x 8",
-        "RADIAL JDI Stereo x 2 · PRO D2 x 1 · J48 x 1"
-      ]
-    },
-    {
-      "category": "Mic · Sound",
-      "title": "Microphone",
-      "items": [
-        "AKG Drum Set Session I · Sennheiser e902",
-        "sE Electronics sE7 MP",
-        "Shure SM57 x 3 · Shure Beta58A x 3",
-        "Sennheiser EW-D 835 wireless mic x 2"
-      ]
-    },
-    {
-      "category": "Backline · Instrument",
-      "title": "Drum / Amp / Keys",
-      "items": [
-        "Gretsch RN-2 Drum · Zildjian K Sweet Cymbal Set",
-        "Ashdown ABM-600 EVO IV · ABM-410H EVO-20",
-        "Marshall JVM-410H · JCM900 4100 · 1960A Cabinet x 2",
-        "Yamaha CP88 · Yamaha MODX M7 · Boss FV-500L"
-      ]
-    },
-    {
-      "category": "Light",
-      "title": "Console / Fixture",
-      "items": [
-        "MA Lighting Grand MA2 ONPC Command Wing",
-        "Favorite LED Vader 250 Moving Spot",
-        "BEAM 230 x 4 · Favorite LED 740B x 8",
-        "LED COB WHITE 200 x 4 · Aegis Pro FZ-2.5C x 2"
-      ]
-    },
-    {
-      "category": "Option · Consult",
-      "title": "Additional operation",
-      "items": [
-        "Wireless in-ear 35,000 KRW / 1CH",
-        "Wireless mic 50,000 KRW / 1EA",
-        "Wired in-ear 20,000 KRW / 1EA",
-        "Additional equipment can be discussed by event format"
-      ]
-    }
-  ],
-  "notices": [],
-  "sources": {
-    "settings": "fallback",
-    "sections": "fallback",
-    "venuePhotos": "fallback",
-    "galleryPhotos": "fallback",
-    "schedules": "fallback",
-    "equipment": "fallback",
-    "notices": "fallback"
-  },
-  "warnings": [
-    "CMS fetch failed: fetch failed"
-  ]
+  "venuePhotos": [],
+  "galleryPhotos": [],
+  "schedules": [],
+  "equipment": [],
+  "notices": []
 }
