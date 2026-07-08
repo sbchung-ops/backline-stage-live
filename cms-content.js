@@ -200,7 +200,7 @@
 
         return `
           <a class="poster-card" href="${escapeAttr(url)}">
-            <span class="date-badge">${escapeHtml(item.dateBadge || "LIVE")}</span>
+            <span class="date-badge">${escapeHtml(badge(item) || "LIVE")}</span>
             <img src="${escapeAttr(src)}" alt="${escapeAttr(image.alt || item.title || "공연 포스터")}" loading="lazy" decoding="async" />
             <span class="meta">${escapeHtml(item.title || "공연 예정")}</span>
           </a>
@@ -234,7 +234,7 @@
         const url = clean(item.url || "./schedule.html");
         return `
           <a class="poster-card" href="${escapeAttr(url)}" data-poster-card data-title="${escapeAttr(item.title || "공연 예정")}">
-            <span class="date-badge">${escapeHtml(item.dateBadge || String(index + 1).padStart(2, "0"))}</span>
+            <span class="date-badge">${escapeHtml(badge(item) || String(index + 1).padStart(2, "0"))}</span>
             <img src="${escapeAttr(image.url)}" alt="${escapeAttr(image.alt || item.title || "공연 포스터")}" loading="lazy" decoding="async" />
             <span class="meta">${escapeHtml(item.title || "공연 예정")}</span>
           </a>`;
@@ -333,6 +333,34 @@
         node.nodeValue = node.nodeValue.replaceAll(from, to);
       }
     });
+  }
+
+  // 직접 지정한 날짜 표시가 있으면 그것을, 없으면 공연일로 자동 계산한다.
+  function badge(item) {
+    return clean(item.dateBadge) || badgeFor(item.date);
+  }
+
+  // 공연일(YYYY-MM-DD) → 접속 시점 기준 뱃지: TODAY / D-3 / 07.12 SAT
+  function badgeFor(dateStr) {
+    const raw = clean(dateStr);
+    const parts = raw.split("-").map(Number);
+    if (parts.length < 3 || parts.some(Number.isNaN)) return "";
+
+    const ev = new Date(parts[0], parts[1] - 1, parts[2]);
+    if (Number.isNaN(ev.getTime())) return "";
+    ev.setHours(0, 0, 0, 0);
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const diff = Math.round((ev.getTime() - today.getTime()) / 86400000);
+    if (diff === 0) return "TODAY";
+    if (diff > 0 && diff <= 7) return `D-${diff}`;
+
+    const weekday = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"][ev.getDay()];
+    const mm = String(ev.getMonth() + 1).padStart(2, "0");
+    const dd = String(ev.getDate()).padStart(2, "0");
+    return `${mm}.${dd} ${weekday}`;
   }
 
   function clean(value) {

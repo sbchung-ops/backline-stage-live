@@ -1,6 +1,6 @@
 {
   "provider": "sanity",
-  "updatedAt": "2026-07-08T09:40:49.153Z",
+  "updatedAt": "2026-07-08T11:20:44.717Z",
   "sources": {
     "settings": "cms",
     "sections": "cms",
@@ -51,7 +51,19 @@
   },
   "venuePhotos": [],
   "galleryPhotos": [],
-  "schedules": [],
+  "schedules": [
+    {
+      "title": "토끼공연",
+      "date": "2026-07-09",
+      "dateBadge": "",
+      "url": "./contact.html",
+      "featured": true,
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/9a9a938370adedcb3ee27b79e1382e09641e874d-236x252.png?w=1000&q=80&auto=format",
+        "alt": "토끼공연"
+      }
+    }
+  ],
   "equipment": [],
   "notices": []
 }
