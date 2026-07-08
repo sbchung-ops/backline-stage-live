@@ -213,35 +213,39 @@
     const orbit = document.querySelector("[data-poster-orbit]");
     if (!orbit) return;
 
+    const stage = orbit.querySelector("[data-poster-stage]");
+    const emptyNote = document.querySelector("[data-poster-empty]");
+
     const featured = schedules.filter((item) => item.featured !== false);
-    const items = (featured.length >= 5 ? featured : schedules).slice(0, 5);
-    if (items.length < 5) return;
+    const source = featured.length ? featured : schedules;
+    const items = source.filter((item) => clean(item.image?.url)).slice(0, 8);
 
-    const cards = [...orbit.querySelectorAll("[data-poster-card]")];
-    cards.forEach((card, index) => {
-      const item = items[index];
-      if (!item) return;
+    // 데이터가 없으면 오르빗을 숨기고 "준비된 공연이 없습니다" 문구를 노출한다.
+    if (!items.length || !stage) {
+      orbit.hidden = true;
+      if (emptyNote) emptyNote.hidden = false;
+      return;
+    }
 
-      const image = item.image || {};
-      const badge = card.querySelector(".date-badge");
-      const img = card.querySelector("img");
-      const meta = card.querySelector(".meta");
+    // 등록된 개수만큼(1개여도) 카드를 재구성한다 — 더미로 채우지 않는다.
+    stage.innerHTML = items
+      .map((item, index) => {
+        const image = item.image || {};
+        const url = clean(item.url || "./schedule.html");
+        return `
+          <a class="poster-card" href="${escapeAttr(url)}" data-poster-card data-title="${escapeAttr(item.title || "공연 예정")}">
+            <span class="date-badge">${escapeHtml(item.dateBadge || String(index + 1).padStart(2, "0"))}</span>
+            <img src="${escapeAttr(image.url)}" alt="${escapeAttr(image.alt || item.title || "공연 포스터")}" loading="lazy" decoding="async" />
+            <span class="meta">${escapeHtml(item.title || "공연 예정")}</span>
+          </a>`;
+      })
+      .join("");
 
-      card.href = clean(item.url || "./schedule.html");
-      card.dataset.title = item.title || "공연 예정";
-      if (badge) badge.textContent = item.dateBadge || `0${index + 1}`;
-      if (img && image.url) {
-        img.src = image.url;
-        img.alt = image.alt || item.title || "공연 포스터";
-      }
-      if (meta) meta.textContent = item.title || "공연 예정";
-    });
+    if (emptyNote) emptyNote.hidden = true;
+    orbit.hidden = false;
+    orbit.dataset.initialIndex = String(Math.min(2, items.length - 1));
 
-    const activeIndex = Math.min(Number.parseInt(orbit.dataset.initialIndex || "2", 10) || 2, items.length - 1);
-    const countLabel = orbit.querySelector("[data-poster-count]");
-    const titleLabel = orbit.querySelector("[data-poster-title]");
-    if (countLabel) countLabel.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(items.length).padStart(2, "0")}`;
-    if (titleLabel) titleLabel.textContent = items[activeIndex]?.title || "";
+    if (typeof window.setupPosterOrbit === "function") window.setupPosterOrbit(orbit);
   }
 
   function applyGalleryPhotos(photos) {

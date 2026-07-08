@@ -1,14 +1,14 @@
-name: Update YouTube videos
+name: Update Instagram posts
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "23 */3 * * *"
 
 permissions:
   contents: write
 
-# Instagram 워크플로우와 같은 그룹으로 묶어 동시 실행을 막는다(양쪽 다 main/live 레포에 push·rsync --delete 하므로).
+# YouTube 워크플로우와 같은 그룹으로 묶어 동시 실행을 막는다(양쪽 다 main/live 레포에 push·rsync --delete 하므로).
 concurrency:
   group: site-auto-deploy-${{ github.ref }}
   cancel-in-progress: false
@@ -17,13 +17,12 @@ jobs:
   update:
     runs-on: ubuntu-latest
     env:
-      YOUTUBE_PLAYLIST_ID: PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd
-      YOUTUBE_CHANNEL_HANDLE: BacklineStage
-      YOUTUBE_VIDEO_LIMIT: "8"
+      INSTAGRAM_POST_LIMIT: "6"
       SITE_URL: https://sbchung-ops.github.io/backline-stage-live
       LIVE_REPO: sbchung-ops/backline-stage-live
       CMS_API_URL: ${{ secrets.CMS_API_URL }}
       BACKLINE_STAGE_LIVE_TOKEN: ${{ secrets.BACKLINE_STAGE_LIVE_TOKEN }}
+      GH_PAT: ${{ secrets.GH_PAT }}
 
     steps:
       - name: Check out repository
@@ -34,26 +33,40 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Fetch YouTube video data
+      # 선택: GH_PAT 시크릿이 있으면 60일 토큰을 자동 연장하고 시크릿을 갱신한다.
+      # 없으면 이 단계는 건너뛰고, 운영자가 ~50일마다 토큰을 수동 재발급하면 된다.
+      - name: Refresh long-lived token
+        id: refresh
+        if: ${{ env.GH_PAT != '' }}
         env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-        run: node tools/fetch-youtube-videos.mjs
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+        run: node tools/fetch-instagram-posts.mjs --refresh-token
 
-      - name: Commit video data
-        id: commit_data
+      - name: Store refreshed token
+        if: ${{ steps.refresh.outputs.token != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          NEW_TOKEN: ${{ steps.refresh.outputs.token }}
+        run: gh secret set INSTAGRAM_ACCESS_TOKEN --body "$NEW_TOKEN"
+
+      - name: Fetch Instagram posts
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ steps.refresh.outputs.token || secrets.INSTAGRAM_ACCESS_TOKEN }}
+        run: node tools/fetch-instagram-posts.mjs
+
+      - name: Commit Instagram data
         shell: bash
         run: |
-          if [[ -z "$(git status --porcelain assets/youtube-videos.json)" ]]; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
+          if [[ -z "$(git status --porcelain assets/instagram-posts.json assets/instagram)" ]]; then
+            echo "No Instagram changes."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/youtube-videos.json
-          git commit -m "Update YouTube video data"
+          git add assets/instagram-posts.json assets/instagram
+          git commit -m "Update Instagram posts"
           git push
-          echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Deploy source build to live repo
         if: ${{ env.BACKLINE_STAGE_LIVE_TOKEN != '' }}
@@ -75,5 +88,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Deploy YouTube video data" || exit 0
+          git commit -m "Deploy Instagram posts" || exit 0
           git push

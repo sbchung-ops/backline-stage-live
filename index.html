@@ -19,6 +19,7 @@
 <link rel="icon" type="image/png" href="./assets/brand/mascot-face.png" />
     <link rel="stylesheet" href="./styles.css" />
     <script defer src="./page-transitions.js"></script>
+    <script defer src="./instagram-feed.js"></script>
     <meta name="description" content="홍대권 라이브 공연장 Backline Stage. 공연, 쇼케이스, 파티, 촬영 대관 일정과 문의 채널을 한곳에서 확인하세요." />
     <link rel="canonical" href="https://sbchung-ops.github.io/backline-stage-live/" />
     <meta property="og:site_name" content="Backline Stage" />
@@ -186,41 +187,17 @@
             </div>
           </div>
 
-          <div class="poster-orbit" id="upcoming-feed" data-poster-orbit data-initial-index="2" data-source="placeholder" aria-label="이번 달 공연 포스터 3D 캐러셀">
+          <p class="empty-note" data-poster-empty>준비된 공연이 없습니다.</p>
+
+          <div class="poster-orbit" id="upcoming-feed" data-poster-orbit data-initial-index="2" aria-label="이번 달 공연 포스터 3D 캐러셀" hidden>
             <button class="poster-orbit__arrow poster-orbit__arrow--prev" type="button" data-poster-prev aria-label="이전 공연 포스터 보기">&lt;</button>
             <button class="poster-orbit__arrow poster-orbit__arrow--next" type="button" data-poster-next aria-label="다음 공연 포스터 보기">&gt;</button>
 
-            <div class="poster-strip poster-strip--orbit" data-poster-stage>
-              <a class="poster-card is-far-prev" href="./schedule.html" data-poster-card data-title="공연 예정 · 1">
-                <span class="date-badge">D-2</span>
-                <img src="./assets/poster-01.png" alt="공연 포스터" loading="lazy" decoding="async" />
-                <span class="meta">공연 예정 · 1</span>
-              </a>
-              <a class="poster-card is-prev" href="./schedule.html" data-poster-card data-title="공연 예정 · 2">
-                <span class="date-badge">D-1</span>
-                <img src="./assets/poster-02.png" alt="공연 포스터" loading="lazy" decoding="async" />
-                <span class="meta">공연 예정 · 2</span>
-              </a>
-              <a class="poster-card is-active" href="./schedule.html" data-poster-card data-title="공연 예정 · 3">
-                <span class="date-badge">TODAY</span>
-                <img src="./assets/poster-03.png" alt="공연 포스터" loading="lazy" decoding="async" />
-                <span class="meta">공연 예정 · 3</span>
-              </a>
-              <a class="poster-card is-next" href="./schedule.html" data-poster-card data-title="공연 예정 · 4">
-                <span class="date-badge">D+1</span>
-                <img src="./assets/poster-04.png" alt="공연 포스터" loading="lazy" decoding="async" />
-                <span class="meta">공연 예정 · 4</span>
-              </a>
-              <a class="poster-card is-far-next" href="./schedule.html" data-poster-card data-title="공연 예정 · 5">
-                <span class="date-badge">D+2</span>
-                <img src="./assets/poster-05.png" alt="공연 포스터" loading="lazy" decoding="async" />
-                <span class="meta">공연 예정 · 5</span>
-              </a>
-            </div>
+            <div class="poster-strip poster-strip--orbit" data-poster-stage></div>
 
             <div class="poster-orbit__caption" aria-live="polite">
-              <span data-poster-count>03 / 05</span>
-              <strong data-poster-title>공연 예정 · 3</strong>
+              <span data-poster-count>00 / 00</span>
+              <strong data-poster-title></strong>
             </div>
           </div>
         </div>
@@ -240,7 +217,7 @@
             </div>
           </div>
 
-          <div class="ig-grid" id="ig-feed" data-source="placeholder">
+          <div class="ig-grid" id="ig-feed" data-source="placeholder" hidden>
             <a class="ig-cell" href="https://www.instagram.com/backline_stage_official/" target="_blank" rel="noopener"><img src="./assets/poster-06.png" alt="" loading="lazy" decoding="async" /><span class="ig-tag">IG</span></a>
             <a class="ig-cell" href="https://www.instagram.com/backline_stage_official/" target="_blank" rel="noopener"><img src="./assets/poster-07.png" alt="" loading="lazy" decoding="async" /><span class="ig-tag">IG</span></a>
             <a class="ig-cell" href="https://www.instagram.com/backline_stage_official/" target="_blank" rel="noopener"><img src="./assets/poster-08.png" alt="" loading="lazy" decoding="async" /><span class="ig-tag">IG</span></a>
@@ -362,8 +339,10 @@
       (() => {
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        document.querySelectorAll("[data-poster-orbit]").forEach((orbit) => {
+        // cms-content.js 가 실제 공연 데이터로 카드를 만든 뒤 호출한다(개수 무관, 1개여도 동작).
+        window.setupPosterOrbit = (orbit) => {
           const cards = [...orbit.querySelectorAll("[data-poster-card]")];
+          if (!cards.length) return;
           const prevButton = orbit.querySelector("[data-poster-prev]");
           const nextButton = orbit.querySelector("[data-poster-next]");
           const countLabel = orbit.querySelector("[data-poster-count]");
@@ -467,7 +446,7 @@
 
           render();
           start();
-        });
+        };
       })();
     </script>
   </body>

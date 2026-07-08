@@ -1,6 +1,7 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { fetchJson, readExisting, clean, clampNumber } from "./_lib.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const playlistId = process.env.YOUTUBE_PLAYLIST_ID || "PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd";
@@ -15,7 +16,7 @@ const videos = apiKey
   : await fetchFromPublicSources({ playlistId, channelId, channelHandle, limit: videoLimit });
 
 if (!videos.length) {
-  const existing = await readExistingPayload(outputPath);
+  const existing = await readExisting(outputPath);
   if (existing?.videos?.length) {
     console.warn(`[youtube] no public videos found for playlist ${playlistId}; keeping existing ${path.relative(root, outputPath)}`);
     process.exit(0);
@@ -117,12 +118,6 @@ async function resolveChannelId(handle) {
   }
 }
 
-async function fetchJson(url) {
-  const response = await fetch(url, { headers: { Accept: "application/json" } });
-  if (!response.ok) throw new Error(`YouTube API failed: ${response.status} ${response.statusText}`);
-  return response.json();
-}
-
 async function fetchText(url) {
   const response = await fetch(url, { headers: { Accept: "application/atom+xml,text/xml" } });
   if (!response.ok) throw new Error(`YouTube feed failed: ${response.status} ${response.statusText}`);
@@ -170,14 +165,6 @@ function thumbnailFor(id) {
   return `https://i.ytimg.com/vi/${encodeURIComponent(id)}/hqdefault.jpg`;
 }
 
-async function readExistingPayload(filePath) {
-  try {
-    return JSON.parse(await readFile(filePath, "utf8"));
-  } catch {
-    return null;
-  }
-}
-
 function fallbackPlaylistVideo(playlistId) {
   return {
     id: "videoseries",
@@ -202,10 +189,6 @@ function decodeXml(value) {
     .trim();
 }
 
-function clean(value) {
-  return String(value || "").replace(/\s+/g, " ").trim();
-}
-
 function normalizeHandle(value) {
   return String(value || "")
     .trim()
@@ -216,10 +199,4 @@ function normalizeHandle(value) {
 
 function escapeRegExp(value) {
   return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
-function clampNumber(value, min, max, fallback) {
-  const number = Number(value);
-  if (!Number.isFinite(number)) return fallback;
-  return Math.max(min, Math.min(max, Math.trunc(number)));
 }

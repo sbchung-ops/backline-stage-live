@@ -3164,3 +3164,16 @@ p, li, th, td, small, .lead { word-break: keep-all; overflow-wrap: break-word; }
   }
   .site-footer__top { grid-template-columns: 1fr; }
 }
+
+/* 데이터 없을 때: 더미 대신 숨김/빈 상태 */
+[hidden] { display: none !important; }
+.empty-note {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 0;
+  padding: 56px 16px;
+  text-align: center;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  opacity: 0.45;
+}
