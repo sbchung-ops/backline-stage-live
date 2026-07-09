@@ -1,6 +1,6 @@
 {
   "provider": "sanity",
-  "updatedAt": "2026-07-09T04:31:23.256Z",
+  "updatedAt": "2026-07-09T12:17:22.990Z",
   "sources": {
     "settings": "cms",
     "sections": "cms",
@@ -8,7 +8,8 @@
     "galleryPhotos": "cms",
     "schedules": "cms",
     "equipment": "cms",
-    "notices": "cms"
+    "notices": "cms",
+    "pricing": "cms"
   },
   "settings": {
     "phone": "010-3402-4358",
@@ -49,6 +50,20 @@
       "body": "공연 현장과 무대의 순간들을 기록합니다."
     }
   },
+  "pricing": {
+    "weekday": "800000",
+    "weekend": "1200000",
+    "promo": {
+      "enabled": true,
+      "discount_label": "25% OFF",
+      "weekday_sale": "600000",
+      "weekend_sale": "900000",
+      "badge": "EVENT",
+      "title": "오픈 기념 대관료 25% 할인",
+      "body": "지금 대관 문의하시면 평일·주말 대관료를 할인가로 진행합니다. 마감 전에 가능 일정을 먼저 확인해 보세요.",
+      "button_label": "할인가 확인하기 →"
+    }
+  },
   "venuePhotos": [],
   "galleryPhotos": [],
   "schedules": [
@@ -56,7 +71,7 @@
       "title": "토끼공연",
       "date": "2026-07-09",
       "dateBadge": "",
-      "url": "./contact.html",
+      "url": "",
       "featured": true,
       "image": {
         "url": "https://cdn.sanity.io/images/pjlsf4hg/production/9a9a938370adedcb3ee27b79e1382e09641e874d-236x252.png?w=1000&q=80&auto=format",

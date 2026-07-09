@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preload" href="./assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./assets/fonts/pretendard/pretendard-dynamic-subset.css" />
     <link rel="preload" as="image" href="./assets/brand/original-white/logo-white.png" />
     <link rel="preload" as="image" href="./assets/brand/original-white/mascot-white.png" />
     <link rel="preload" as="image" href="./assets/brand/original-white/face-white.png" media="(min-width: 1081px)" />
@@ -19,18 +19,18 @@
     <meta property="og:description" content="서울 마포구 와우산로18길 20 지하1층 Backline Stage 위치, 약도, 지도 앱 길찾기 안내." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sbchung-ops.github.io/backline-stage-live/location.html" />
-    <meta property="og:image" content="https://sbchung-ops.github.io/backline-stage-live/assets/hero-reference-style.png" />
+    <meta property="og:image" content="https://sbchung-ops.github.io/backline-stage-live/assets/hero-reference-style.jpg" />
     <meta property="og:locale" content="ko_KR" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="오시는 길 | Backline Stage" />
     <meta name="twitter:description" content="서울 마포구 와우산로18길 20 지하1층 Backline Stage 위치, 약도, 지도 앱 길찾기 안내." />
-    <meta name="twitter:image" content="https://sbchung-ops.github.io/backline-stage-live/assets/hero-reference-style.png" />
+    <meta name="twitter:image" content="https://sbchung-ops.github.io/backline-stage-live/assets/hero-reference-style.jpg" />
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Backline Stage",
   "url": "https://sbchung-ops.github.io/backline-stage-live",
-  "image": "https://sbchung-ops.github.io/backline-stage-live/assets/hero-reference-style.png",
+  "image": "https://sbchung-ops.github.io/backline-stage-live/assets/hero-reference-style.jpg",
   "email": "BacklineStageOfficial@gmail.com",
   "address": {
     "@type": "PostalAddress",
@@ -206,7 +206,8 @@
               </div>
             </div>
 
-            <svg class="sketch" viewBox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="홍익대학교 정문 삼거리에서 Backline Stage까지의 간단 약도">
+            <!-- 실제 OSM 도로망 기반 약도. 도로 레이어 재생성: node tools/generate-route-sketch.mjs -->
+            <svg class="sketch" viewBox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="홍익대학교 정문 삼거리에서 와우산로, 와우산로18길을 따라 Backline Stage(홍익빌딩 B1)까지 이어지는 실제 도로 기반 약도">
               <defs>
                 <pattern id="routeDots" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse">
                   <circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.12)" />
@@ -215,63 +216,78 @@
                   <stop offset="0" stop-color="rgba(74,92,190,0.26)" />
                   <stop offset="1" stop-color="rgba(255,45,93,0.18)" />
                 </linearGradient>
+                <style>
+                  .rs-label { font-family: Pretendard, sans-serif; font-size: 12px; font-weight: 800; fill: rgba(245,246,255,0.8); paint-order: stroke; stroke: #10131d; stroke-width: 3.5px; letter-spacing: 0.04em; }
+                  .rs-dir { font-family: Pretendard, sans-serif; font-size: 13px; font-weight: 900; fill: #ffffff; paint-order: stroke; stroke: #10131d; stroke-width: 4px; letter-spacing: 0.02em; }
+                </style>
               </defs>
               <rect x="0" y="0" width="1200" height="620" fill="#10131d" />
               <rect x="0" y="0" width="1200" height="620" fill="url(#routeGlow)" />
               <rect x="0" y="0" width="1200" height="620" fill="url(#routeDots)" />
 
-              <rect x="70" y="92" width="1030" height="46" fill="#ffffff" opacity="0.08" />
-              <line x1="96" y1="115" x2="1072" y2="115" stroke="#ffffff" stroke-width="4" stroke-dasharray="20 14" />
-              <text x="92" y="68" font-family="Pretendard, sans-serif" font-size="15" font-weight="900" fill="#ffffff" letter-spacing="0.12em">홍익대학교 정문 삼거리 · HONGIK UNIVERSITY GATE</text>
+              <!-- 공원 / 홍익대 캠퍼스 (실제 폴리곤) -->
+              <path d="M1186.5 108.7L1164.7 121.9L1141.3 134.7L1094.6 154.4L1074.5 178.3L1036.7 223.6L1025.4 228.8L1011.8 236.3L957.7 285.1L950.5 296.4L925.3 348.7L904.8 406.3L896.9 407.1L885.5 408.1L867.9 405.5L868.4 413L858.8 416.5L857.5 427.3L856.6 452L856 470.4L856.7 495.2L836.5 517.6L821.8 516.1L822 527.5L820.8 552.9L819.8 573.8L819.1 592.6L843.4 593.1L843.9 622.2L826.9 621.8L826.6 657.7L939.6 663.4L957.5 672.8L974.1 634.4L994.2 591L946.5 567.7L930.8 560.1L940.7 526.5L959.6 504.2L977 486.3L1006.2 454.7L1030.6 442.6L1056.3 436.1L1104.2 437.6L1122.2 425.2L1162 377.6L1201.8 337.2L1246.4 319.9L1298 271.9L1337.7 227.9L1315.1 216.7L1274.2 198.2L1248.2 167.3L1208.4 119.8L1186.5 108.7Z M493.3 223.6L492.4 240.3L515.3 249.5L524.1 253.5L529 255L541.1 255.8L549.5 242.3L553.9 235L571.2 212L578.1 200.2L575.3 196.2L565.3 198.3L560.2 199.9L549.8 203.3L545.3 205.2L525.8 213.5L518.6 216.4L512 218L503.2 220L495.5 221.4L493.3 223.6Z M762.3 646.8L750.5 616.4L733.8 595.4L728.6 597.1L696.4 607L695.1 615.5L712.4 643.7L728 646.9L745.8 647.1L762.3 646.8Z M811.3 274.8L821 284.4L792.7 367.1L789.4 371L775.2 367.6L769 361.9L767.7 354.4L797.5 272.5L811.3 274.8Z" fill="rgba(120,200,140,0.07)" />
+              <path d="M761.5 656.5L767.5 652.1L765.8 648.2L752.5 616.5L734.4 593.1L694.4 602.7L663.3 598.4L625 593.1L616.8 515.1L617.2 507.8L624.9 376.6L619.3 313.5L611.4 285.5L607.4 254.2L610.7 228.1L602.9 199.8L630 163.9L643.6 156.7L648.3 161.9L661.8 175.7L688.8 158.9L715.6 145.2L729.1 159.3L742.8 179.4L844.2 245.6L937.8 310.4L916.1 348.1L896.9 407.1L885.5 408.1L867.9 405.5L868.4 413L858.8 416.5L857.5 427.3L856.6 452L856 470.4L856.7 495.2L836.5 517.6L821.8 516.1L822 527.5L820.8 552.9L819.8 573.8L819.1 592.6L843.4 593.1L843.9 622.2L826.9 621.8L826.6 657.7L790.7 653L792.8 772.2L745 770.9L746.2 740.1L762.1 727.9L761.3 668.3L761.5 656.5Z" fill="rgba(255,45,45,0.10)" stroke="rgba(255,45,45,0.4)" stroke-width="1.5" />
 
-              <rect x="88" y="158" width="260" height="118" fill="#ff2d2d" />
-              <text x="218" y="204" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="24" font-weight="900" fill="#ffffff">홍익대학교</text>
-              <text x="218" y="233" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="13" font-weight="800" fill="#ffffff">정문 앞 3거리 기준</text>
-              <text x="218" y="255" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="13" font-weight="900" fill="#ffffff" letter-spacing="0.08em">START</text>
+              <!-- 실제 도로망 (OpenStreetMap, 좁은 길 → 큰 길 순) -->
+              <g fill="none" stroke="rgba(245,246,255,0.10)" stroke-width="2"><path d="M625.8 158L630 163.9L639.3 174.1L644.4 179.7L659.5 192.7" /><path d="M659.5 192.7L663.6 196.8L664.7 198L678.1 210.1L693.1 222L702.5 228.4L730.2 235.8L747.7 239.7L749 240.1L776.3 248L783.3 250L790.9 256.7L794.5 264.2L793.2 274.1L787.9 286.7L771 326.7L765 357.7L764.3 370.6L763.4 396L762.6 417.5L761.8 438.1L761.3 449.3L760.5 470.7L760.4 480.4L757.9 497.8L758.3 519.8L757.3 549.6L757.1 554.1L760.9 578L762.6 596.3" /><path d="M81.6 148.8L89.3 156.3L130.3 200L177.6 247.8L178.8 254.5" /><path d="M561.2 -154.8L568.6 -146.1L563.7 -122.6L562.6 -117.1L561.5 -111.9L558 -86.2L557.2 -70.8L557.2 -37L557.6 -33.6L557.6 -27.8L558.3 -20.7L566.3 -12.3L610.4 30.6L622.3 43.8L649.5 73.9L673.1 125.8L675.6 133.2" /><path d="M610.4 30.6L678.1 -0.7L699.8 -9.8L718 -15L744.9 -20.4L746.9 -20.3L791.5 -17.9" /><path d="M746.7 38.6L746.7 30.9L746.9 -20.3" /><path d="M945.4 15.4L966.4 -16.4L991.2 -53.9L992.7 -56.2L1009.6 -81L1035.6 -121" /><path d="M343.1 217.5L353.3 270.2" /><path d="M413.4 71.7L432 104.1L454.1 130.1L491.7 146.2" /><path d="M346.7 305.3L296.2 306.6L275.4 307L221 355L213.9 361" /><path d="M220.9 244.1L215.6 227.5L217.6 211.1L225.8 193.2L230.6 186L235.7 180.1L239 176.3L260.9 154.9L282.8 134.6L290.6 125.3L369 49.6L405.4 19.8" /><path d="M289.7 408.2L285 400.2L285.6 380.2L292.8 354.5L297.1 337.5L296.2 306.6" /><path d="M275.4 307L270.2 286.3L259.2 272.7L250.6 262.1L246.1 235.6" /><path d="M259.2 272.7L238.6 290L221.3 318.9L208.6 317.8" /><path d="M419.7 30.7L405.4 19.8L369.1 -19.4" /><path d="M201.1 347.1L203.1 333.6L208.6 317.8L218.6 278.3L219.5 267.5L220.8 252.2L221.1 249.2L220.9 244.1" /><path d="M313.4 221.7L316.2 256.5L312 265.9L310.9 271.6L313.6 281.2" /><path d="M270.2 286.3L307.6 281.8L313.6 281.2L325.3 282.2L337.3 285.4L348.8 293.1" /><path d="M100.2 554.9L52.5 635.9L27.9 680.8L0.8 728.1L-6 739.9" /><path d="M282.6 476.9L263.9 509.6L256.5 525.8L249.8 537.6L229.6 571.9L226.8 576.6L205.3 615.9L173.9 672.3L157.7 701.5" /><path d="M75.1 477L48.1 525.7L-8.5 621.7L-21.8 642.4L-25.2 650.4L-31.9 664.4" /><path d="M413.6 -70.2L409.5 -60L369.1 -19.4L273.3 68.8L254 82.4L240.2 94.7L232.2 102.9L130.3 200" /><path d="M96.6 345.5L80.5 324.9L62.1 301.5L43 271.6" /><path d="M-23.6 286.5L57.2 348.1L78.9 365.5" /><path d="M435.7 29L439.4 31.8L457.7 45.5L473.8 61.2L481.4 128.1L491.7 146.2" /><path d="M519.3 43.5L514.9 49L506 60.9L504.3 79.3L510.7 104.5L511.8 118.5L504.6 136.6L491.7 146.2" /><path d="M593 122.7L588.5 127.6L574.4 143.3L563.4 155L556.1 161.7L549.3 152.3" /><path d="M556.1 161.7L567 188.6L568.7 193.2" /><path d="M549.3 152.3L545.5 145.9L544.2 141.1" /><path d="M219.5 267.5L204.7 269.7L201.7 274" /><path d="M80.5 324.9L95.4 312.1" /><path d="M285.1 408L284.3 433.6L296.1 434.1" /><path d="M715.2 41.7L720.3 57.4" /><path d="M768.9 105L768.1 110.9L765 137.8L763.5 154.6" /><path d="M765 137.8L742.2 134.9" /><path d="M809.7 110.6L809.2 117.2L807.8 152.1L816.2 165.3L830 185.3L851.3 207.3L882.2 198.1L944.2 180.6L1010.6 161.7L1036.4 150.6L1033.3 104.7L1032.5 98.3L1023.3 67.2L1018.6 60.7" /><path d="M918 91.2L919.7 96.9L931 135.8L944.2 180.6" /><path d="M816.2 165.3L826.3 166.7L865.1 155.8L931 135.8L993.6 116.8L1033.3 104.7" /><path d="M792.2 70.3L815.8 72.4" /><path d="M400.9 106.7L390.4 102.4" /><path d="M390.4 145.5L404.5 149.3L410 155.3" /><path d="M430.1 213.8L438.3 180L442.1 158.8" /><path d="M239 176.3L251.3 188.6" /><path d="M260.9 154.9L283.9 180.3" /><path d="M337.1 140.5L326.8 161.2L316.3 173.6" /><path d="M286 225.4L281.1 203.6" /><path d="M-57.2 554.7L-41.7 565L-20.8 577.4L-7.7 556.3L18.6 509.4" /><path d="M790.7 653L790.1 649L789.7 644.3L788.1 635.3L768.8 635.8L762.3 615.3" /><path d="M692.8 496.6L728.2 493.4L734.5 492.9L734.3 475.2L734.2 440.1L731.4 433L729.1 427.3L721.1 414.4L730.5 397.3L734.3 384.3L738.4 370.7L749.1 342.7L756.6 322.6L760.3 312.8L768.9 283.8L768.9 275.4L765.1 267.1L756.4 252.2L753.2 247L749 240.1" /><path d="M549.3 152.3L534.7 156.2L524.3 158L501.3 154.9L491.7 146.2" /><path d="M359.5 215.3L373.6 148.9L389.5 104.5L390.4 102.4L413.4 46.1L415 42.1L419.7 30.7L442.3 -5.5L449.5 -20.5L453.3 -27.6" /><path d="M1228.4 8.3L1218.2 2.2L1185.8 38.7L1187.5 50.6L1198.8 38.3" /><path d="M622.3 43.8L653.1 29.1" /><path d="M273.3 68.8L283.2 81.6" /><path d="M268.4 112.8L252.9 107.1L226.8 171.1L235.7 180.1" /><path d="M286 225.4L287.3 244" /><path d="M527.6 208.4L521.2 191.6L518.6 180.5" /><path d="M164.8 526.8L173.4 511.8" /><path d="M5.7 502.2L18.8 476.3" /><path d="M127.4 570.8L114.5 592L103.2 608.2L101.1 611.5" /><path d="M103.2 608.2L133.3 625.2" /><path d="M263.9 509.6L242.4 499.3" /><path d="M249.8 537.6L233 529.2" /><path d="M74.2 14.6L94.6 36.8" /><path d="M49.2 38.2L38.4 26.7" /><path d="M413.4 46.1L424.1 50.7" /><path d="M410 155.3L400.2 194L395.6 212.7" /><path d="M1200.4 465.8L1195.8 459.5L1181.2 441.1L1147.3 466.3L1145.9 469.9L1148.2 473.8L1156.6 475.6L1162.1 473L1170.7 466.6L1184.7 459.7" /><path d="M695.6 520L693.1 499.3L692.8 496.6" /><path d="M762.3 615.3L762.6 596.3" /><path d="M663.3 598.4L666 580.5" /><path d="M692.9 217.2L680.6 207.5L665.1 194.9L659.5 192.7L658.4 197.8L659.4 201.3L674 214.8L685.7 225.7" /><path d="M685.7 225.7L689.9 228.8L700.5 236.6L707.6 227.8L697.1 220.3L692.9 217.2" /><path d="M700.5 236.6L693.3 245.3L692.2 246.6" /><path d="M921.4 488.6L934.8 479.6L968.5 422.6L985.6 404.5L1015.2 378.5L1050.2 361.4L1055.1 354.3L1056.6 340.2L1038.8 342.5L978.7 379.9L969.1 387.8L952.3 401.8L946.8 406.3L943.3 416.5" /><path d="M505.4 606.9L515.2 603.4L535.5 608L551.7 608.3" /><path d="M635.5 577.9L625.4 579.9L620.8 580.8" /><path d="M590.7 307.2L592.2 307L596.1 306.4L602.5 305.5L604.2 313.9" /><path d="M927 336.8L918.8 345.7L914 348.8L912.1 354.5L910.5 359.2" /><path d="M942.6 544.8L998.8 571.2L1010.8 555.3L955 526.1" /></g>
+              <g fill="none" stroke="rgba(245,246,255,0.30)" stroke-width="5" stroke-linecap="round"><path d="M373.2 212.4L359.5 215.3L343.1 217.5L313.4 221.7L286 225.4L246.1 235.6L231.2 239.3L220.9 244.1L178.8 254.5L132.2 261.8L123.9 263.4" /><path d="M315.5 479.1L281.4 588.6L256.9 646.2L230.6 706L209.3 762.3" /><path d="M603.9 184.2L593.2 186.8L579.3 190.5L568.7 193.2L560.3 196.3L549.3 200.4L544.1 202.3L527.6 208.4L516.4 212.6L511.3 214.5L502.6 217.7L494.5 218.4L488.1 218L454.4 215.3L430.1 213.8L406.8 212.8L395.6 212.7L373.2 212.4" /><path d="M350.3 345.2L384.3 346.9L420.7 347.7L451.2 348.8L486.9 353.5L501.4 358.5L518 364.2L524.9 367.1" /><path d="M206.4 32.3L215.1 40.6L254 82.4L268.4 112.8L290.6 125.3L337.1 140.5L373.6 148.9" /><path d="M627.5 -204.4L648.6 -188.1L674.8 -168.6L708.9 -144.6L710.7 -143.3L741.9 -121.1L791.4 -88.5L804 -80.3L846 -52.7L894.6 -18.2L945.4 15.4L1012.3 56.8L1018.6 60.7" /><path d="M566.3 -12.3L556.7 -10.3L507.7 11.1L504.9 12.3L495.4 16.2" /><path d="M649.5 73.9L680.4 57.4L698.3 47.9L715.2 41.7L718.2 40.6L746.7 38.6L791.5 45.2L844.8 50.3L945.4 15.4" /><path d="M790.6 107.9L791.1 99.9L792.2 70.3L791.5 45.2L791.5 -17.9L791.4 -88.5" /><path d="M846 -52.7L844.5 35L844.8 50.3" /><path d="M945.4 15.4L1023.8 -8L1037.8 -20L1063.6 -42.1L1070.3 -42.5L1104.6 -74.5" /><path d="M384.3 346.9L383.8 404.1L384 411.4" /><path d="M488.4 243.8L508.8 250.6L516.8 253.1L542 261.9L545.7 263L555.2 264.4" /><path d="M420.7 347.7L422.3 405.2L422.5 412.4" /><path d="M406.8 212.8L403.5 272.4L435.6 277L441.2 277.8L451.8 258.6L454 244.7L454.4 215.3" /><path d="M451.2 348.8L453 325.4L454.1 318.8L485.9 262.2L488.4 243.8L488.1 218L491.7 146.2" /><path d="M486.9 353.5L515.5 258L516.8 253.1" /><path d="M505.4 606.9L514.8 609.5L552.5 620L583 628.8L614.9 637.1L635.2 644.1L659.1 655.2L683.2 677.3L720.5 722.9L725.7 729.2L740.5 747.2L739.3 755.3L726 772L718.6 782.1" /><path d="M586 278.1L605.2 253.9" /><path d="M508 509.4L514.7 504.8L590.3 452.8L615 436.1L620.2 435.3" /><path d="M509.3 463.9L514.9 458.1L526.1 446.5L599.9 363.6L590.7 307.2L586 278.1L555.2 264.4" /><path d="M614.9 637.1L615.2 634.4L620.8 580.8L618.9 563.3L614.4 521L614.1 518.2L613.1 508.6L614.3 499.3L620.2 435.3L621.2 414L623.2 377.2L621.2 358.3L620 340.3L618.3 316.6L608.7 286.5L605.2 253.9L606.1 248.5L609.4 228.6L599.1 191.3" /><path d="M256.5 406.8L222.4 475.1L219.1 479.8L183.8 538.1L155.4 587L133.3 625.2L92.1 696.8L58.9 755.7" /><path d="M500 483.7L432.3 544.8L414.3 562.2L404.1 574.1L375.4 600.4L346.7 626.6L345.4 627.8L317.5 653.4L305.2 664.6L289.4 669.2L271 672.9" /><path d="M222.4 475.1L230 475.3L282.6 476.9L315.5 479.1L323.7 479.8L332.1 480.5" /><path d="M233.5 764.2L240 739.5L253.1 709.5L257.7 699L263.6 688.1L271 672.9L298.9 594.3L332.1 480.5L341.3 415.9L341.7 411L343 402.6L350.3 345.2L365.9 270.4L361.1 265.2" /><path d="M382.5 482.5L357.9 581.6L356 589.3L351.1 596L346.7 626.6" /><path d="M257.7 699L273.7 690.9L299 680L312.2 675.1L326.3 663.3L355.8 638.7L387 613.8L395.7 606.1L427.9 572.8L444.2 558L450.5 552.6L496.9 511.9L508 509.4" /><path d="M434.5 483.1L414.3 562.2L427.9 572.8L449.9 590.3L481 603.3L505.4 606.9" /><path d="M395.7 606.1L405.9 637L408.6 652.9L411 666.9L413.5 687.4L415.1 694.8L423.6 713.5L422.9 716.5L421.6 719.8L417.8 722.3L393.6 737.8" /><path d="M-133 705.2L-130.5 693.5L-113.9 641.4L-94.7 608.4L-71.3 576.1L-57.2 554.7L-15.2 490.6L15.8 443.3" /><path d="M183.8 538.1L164.8 526.8L75.1 477L15.8 443.3L-16 418L-114.5 335.6" /><path d="M256.9 646.2L229 630L205.3 615.9L155.4 587L146.3 581.7L139.1 577.5L127.4 570.8L100.2 554.9L48.1 525.7L18.6 509.4L5.7 502.2L-15.2 490.6" /><path d="M153.3 295.4L146.4 300.4L96.6 345.5L78.9 365.5L51.1 396.9L48.6 399.7L15.8 443.3" /><path d="M-3.4 128.6L3.6 121.9L42.2 84.8L94.6 36.8L160.5 -23.5" /><path d="M1338 677.7L1326.1 667.6L1305.6 661.7L1268.6 661.9L1258.8 649.6L1246.1 641.6L1205.7 617.8L1162.9 604.8L1133.3 594.3L1129.7 592.9L1117.3 593.3" /><path d="M195.9 14.7L187.7 5.6L160.5 -23.5L138.7 -46.1L107 -79.9" /><path d="M123.9 263.4L102.5 266.4L43 271.6L-23.6 286.5L-66 296.4L-76.4 298.7" /><path d="M-76.4 298.7L48.6 399.7" /><path d="M96.6 345.5L147.1 398L181 429.4L187.8 438.7L187.5 446.4L181.8 457L177.2 462.9L171 466L94.1 423.5L51.1 396.9" /><path d="M181.8 457L219.1 479.8" /><path d="M365.6 481.8L368.2 455.6" /><path d="M699 122.4L706.4 131.4L716.7 144.7L730.3 158L743.3 177.5L844.6 243.8L880 237.7L891.8 248.2L908.2 263.6L912.4 266.8L949.6 295.6" /><path d="M1036.4 150.6L1048.1 184.9" /><path d="M972.9 209.1L1048.1 184.9" /><path d="M1189 -79.1L1188.2 -57.6L1174.5 -30.3L1160.9 1.6L1154.6 28.8L1159.7 60.3L1168.9 79.6L1174.5 91.3L1174.2 105.5L1171.6 110.6L1167.5 115.2L1139.7 129L1097.2 149.3L1069.1 179.7L1034 220.4L1024 225.1L1023 225.5L1007.5 233.9L957 284.7L949.6 295.6L927 336.8L922.8 347.5L904.5 398.8" /><path d="M904.5 398.8L896.2 419.7L894.7 426.9L895 432.1L895.9 438L897.6 445.7L900.6 454.8L909.1 469.9L921.4 488.6L928.6 499.9L940.2 515L955 526.1" /><path d="M1032.5 98.3L1055.4 100.3L1055.4 122.8L1087.3 106.6L1119.7 88.3L1124.4 87.1" /><path d="M1078 31.4L1091.6 56.7L1102.2 63.7L1118.8 75.2L1124.4 87.1L1137.2 122.3" /><path d="M912.4 266.8L944.7 253.7" /><path d="M891.8 248.2L960.1 228.1" /><path d="M1113.1 1.9L1131.7 39.3L1148.9 74.9" /><path d="M1131.7 39.3L1111.3 49.8" /><path d="M403.5 272.4L386.1 283.3L380.4 288.7L387 316.4" /><path d="M435.6 277L433.8 282.1L433.2 287.4L434.2 295.1L437.4 301.8" /><path d="M1117.3 593.3L1118.3 599.8L1083.3 656.2L1051.1 698.6L1021.9 722.9L991.8 720.8L983.2 725.7L977.4 732.2L994.9 784.1L1010.6 798.2" /><path d="M1117.3 593.3L1107.8 590.8L1106 567.9L1078.7 546L1087.3 502.8L1074.6 496.2" /><path d="M1053.2 471.7L998.2 512.5L996.6 516.1L996.7 519.7L998.1 522.2L1000.7 523.6L1004.5 524L1008.7 522.9L1014.8 518.5L1062.1 480.7L1086.1 460.7L1090.8 457.9L1094.5 458.2L1098.5 461.9L1111.1 481L1117.6 487.2" /><path d="M1117.6 487.2L1121.9 495.6L1123.1 508.8L1134.6 520.6L1147.1 525.2L1163.4 528L1168.9 535.8L1178.6 555.4L1193.2 582L1199.9 588.2L1211.1 590.8L1222.9 601.8L1294.5 577.4L1315.7 583.1" /><path d="M501.4 358.5L497 367.5L478.8 381L472.5 381.9L469.8 383.9L469.1 413.2" /><path d="M444.2 558L432.3 544.8" /><path d="M469.3 564.9L457.6 558.6L450.5 552.6" /><path d="M449.9 590.3L428.2 617.7" /><path d="M138.7 -46.1L95.5 -5.9L74.2 14.6L49.2 38.2L23.1 62.8" /><path d="M-25.9 10.2L2.6 40.8L23.1 62.8L42.2 84.8" /><path d="M552.3 522.8L516 522.4L507.7 522.3" /><path d="M590 511.7L589.4 522.4L583 628.8" /><path d="M552.5 620L551.5 651.8L571.8 655.7" /><path d="M663.3 598.4L659.4 649.9L659.1 655.2" /><path d="M508.7 483.5L503.5 483.6L500 483.7L434.5 483.1L382.5 482.5L365.6 481.8L332.1 480.5" /><path d="M361.1 265.2L353.3 270.2L348.8 293.1L346.7 305.3L338.9 344.3L329.2 402.5L327.4 410.2L325 419.3L315.5 479.1" /><path d="M590.3 452.8L601.3 480.1" /><path d="M621.2 414L603.5 414.8" /><path d="M1117.6 487.2L1126.8 484.5L1135.3 483.8L1147.6 486.1L1159.3 486.6L1168.1 482.6L1194.5 467.5L1200.4 465.8L1214.9 465.6L1221.7 463.9L1244.2 443.5L1256.6 428.5L1262.4 409.3L1270.1 397.7L1292.5 382" /><path d="M1168.9 79.6L1187.9 92.6L1205.6 113.2L1250.2 166.2L1276.1 197.2L1312.8 215.5L1302.5 233.8L1286.5 240.4L1283.4 251.8L1276 252.5" /><path d="M1048.1 184.9L1069.1 179.7" /><path d="M298.9 594.3L289.2 591.1L281.4 588.6" /></g>
+              <g fill="none" stroke="rgba(245,246,255,0.34)" stroke-width="6" stroke-linecap="round"><path d="M373.2 212.4L390.4 145.5L400.9 106.7L406.6 90.4L413.4 71.7L422.9 53.1L424.1 50.7L435.7 29L445.7 11.9L451.9 0L457.2 -11.6L462.2 -17.2" /><path d="M503.2 226.9L500.9 228.7L499.1 230.2L497.6 234.3L508.7 238.5L512.3 240.4L520.6 244.9L522.8 245.4L524.6 245.9L526 245.8L529 245.8L532.3 244.2L533.6 242.8L535.2 241L546.3 228.9L554.6 219.4L561.6 209.6L562.7 207.7L562.9 206.6L562.6 205.5L561.8 204.6L560.1 204.3L558.9 204.6L546.3 209.2L512.4 221.6L509.3 224.4L506.1 226.4L503.2 226.9" /><path d="M361.1 265.2L367.4 240L373.2 212.4" /><path d="M224.1 751.9L241.6 707.9L243 702.8L244.8 698.5L260.3 667L288.1 594.8L289.2 591.1L290.9 587.6L321.9 485.2L323.7 479.8L324.8 475.7L333.5 419.1L334.6 411L335.7 403.1L349.3 320.6L358 272.5L361.1 265.2" /></g>
+              <g fill="none" stroke="rgba(245,246,255,0.5)" stroke-width="9" stroke-linecap="round"><path d="M500.8 776.3L501.6 747.3L501.8 741.1L503.2 687.6L503.9 661.9L504.5 641.6L505.4 606.9L507.7 522.3L508 509.4L508.4 496.7L508.7 483.5L509.3 463.9L510.5 419.3" /><path d="M510.5 419.3L469.1 413.2L422.5 412.4L384 411.4L341.7 411L334.6 411L327.4 410.2L289.7 408.2L285.1 408L256.5 406.8L213.9 361L201.1 347.1L153.3 295.4L123.9 263.4L65.9 202.6L61.3 197.9L47.2 183.1" /><path d="M625.8 158L643.5 148.1L675.6 133.2L699 122.4L729.8 105.7L748.8 102.4L768.9 105L790.6 107.9L809.7 110.6L817.6 111.1L822.4 111.3L842.6 110.8L850.9 110.2L869.8 106.2L918 91.2L1018.6 60.7L1039.3 55.6L1061.3 43.4L1078 31.4L1113.1 1.9L1160.1 -37.1L1172.8 -53.8L1179.9 -63.5L1189 -79.1" /><path d="M510.5 419.3L524.9 367.1L555.2 264.4L564.4 243.5L578.8 221.3L599.1 191.3L603.9 184.2L612.3 174.4L625.8 158" /><path d="M47.2 183.1L40.9 176L33.9 168.3" /><path d="M33.9 168.3L21.2 154.7L15.1 148.3L-3.4 128.6L-86.1 38L-94.2 29.4L-156.7 -37.3L-186.1 -83.8L-193.6 -95.6" /></g>
+              <g fill="none" stroke="rgba(245,246,255,0.55)" stroke-width="11" stroke-linecap="round"><path d="M462.2 -17.2L495.4 16.2L519.3 43.5L593 122.7L612.5 143.7L625.8 158" /></g>
+              <g fill="none" stroke="rgba(245,246,255,0.6)" stroke-width="15" stroke-linecap="round"><path d="M-62.3 285.3L26.6 202.3L47.2 183.1" /><path d="M47.2 183.1L61.6 168.7L81.6 148.8L113.2 119.3L187.9 49.5L206.4 32.3L215.2 21.1L337.8 -90.4L368.6 -118.6" /><path d="M33.9 168.3L-62 257.9L-102.7 295.9L-181.9 369.9L-219.3 404.9L-267.5 449.9L-330.8 509L-377.7 552.9" /><path d="M355.6 -132.1L325.4 -103.6L202.9 8.3L195.9 14.7L174.1 35.1L58.5 145.1L48.2 154.9L33.9 168.3" /></g>
 
-              <circle cx="356" cy="115" r="18" fill="#ffffff" />
-              <text x="356" y="87" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="14" font-weight="900" fill="#ffffff">정문 삼거리</text>
-              <line x1="356" y1="133" x2="344" y2="158" stroke="#faff00" stroke-width="5" stroke-linecap="round" />
+              <!-- 도로명 라벨 -->
+              <text class="rs-label" x="496" y="560" transform="rotate(-90 496 560)" text-anchor="middle">와우산로</text>
+              <text class="rs-label" x="890" y="90" transform="rotate(-17 890 90)" text-anchor="middle">와우산로</text>
+              <text class="rs-label" x="556" y="398" transform="rotate(-48 556 398)" text-anchor="middle">와우산로18길</text>
+              <text class="rs-label" x="320" y="452" transform="rotate(-81 320 452)" text-anchor="middle">어울마당로</text>
+              <text class="rs-label" x="543" y="70" transform="rotate(47 543 70)" text-anchor="middle">홍익로</text>
+              <text class="rs-label" x="380" y="400" text-anchor="middle">잔다리로</text>
+              <text class="rs-label" x="95" y="130" transform="rotate(-43 95 130)" text-anchor="middle">양화로</text>
 
-              <rect x="438" y="188" width="230" height="68" fill="rgba(255,255,255,0.06)" stroke="#ffffff" stroke-width="2" />
-              <text x="553" y="229" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="15" font-weight="800" fill="#ffffff">홍대야구연습장</text>
+              <!-- 방면 표시 -->
+              <text class="rs-dir" x="444" y="28" text-anchor="end">↑ 홍대입구역 9번 출구</text>
+              <text class="rs-dir" x="516" y="604">↓ 상수역 방면</text>
 
-              <rect x="724" y="180" width="250" height="76" fill="rgba(250,255,0,0.12)" stroke="#faff00" stroke-width="2" />
-              <text x="849" y="212" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="15" font-weight="900" fill="#faff00">와우산로18길 20</text>
-              <text x="849" y="238" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="14" font-weight="900" fill="#faff00">홍익빌딩 B1</text>
+              <!-- 홍익대학교 라벨 -->
+              <text x="742" y="484" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="17" font-weight="900" fill="rgba(255,110,110,0.9)" style="paint-order: stroke; stroke: #10131d; stroke-width: 4px;">홍익대학교</text>
+              <text x="742" y="504" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="11" font-weight="800" fill="rgba(255,110,110,0.65)" style="paint-order: stroke; stroke: #10131d; stroke-width: 3px;">서울캠퍼스</text>
 
-              <rect x="830" y="350" width="210" height="70" fill="rgba(255,255,255,0.055)" stroke="#ffffff" stroke-width="2" />
-              <text x="935" y="392" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="15" font-weight="800" fill="#ffffff">삼거리포차</text>
+              <!-- 도보 경로: 정문 삼거리 → 와우산로 → 와우산로18길 → 공연장 (실제 도로 위) -->
+              <path d="M625.8 158 L612.3 174.4 L603.9 184.2 L599.1 191.3 L578.8 221.3 L564.4 243.5 L555.2 264.4 L586 278.1 L590.7 307.2 L599.9 363.6 L601.6 382.7" fill="none" stroke="#05060d" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+              <path d="M625.8 158 L612.3 174.4 L603.9 184.2 L599.1 191.3 L578.8 221.3 L564.4 243.5 L555.2 264.4 L586 278.1 L590.7 307.2 L599.9 363.6 L601.6 382.7" fill="none" stroke="#faff00" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="16 11" />
+              <circle cx="555.2" cy="264.4" r="6" fill="#faff00" stroke="#10131d" stroke-width="2" />
 
-              <rect x="438" y="456" width="230" height="72" fill="rgba(255,255,255,0.045)" stroke="#ffffff" stroke-width="2" />
-              <text x="553" y="500" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="15" font-weight="800" fill="#ffffff">상수역 방면</text>
+              <!-- START: 홍익대 정문 삼거리 -->
+              <circle cx="625.8" cy="158" r="9" fill="#ff2d2d" stroke="#10131d" stroke-width="2.5" />
+              <text x="644" y="150" font-family="Pretendard, sans-serif" font-size="15" font-weight="900" fill="#ffffff" style="paint-order: stroke; stroke: #10131d; stroke-width: 4px;">홍익대 정문 삼거리</text>
+              <text x="644" y="170" font-family="Pretendard, sans-serif" font-size="11" font-weight="900" fill="#ff6e6e" letter-spacing="0.18em" style="paint-order: stroke; stroke: #10131d; stroke-width: 3px;">START</text>
 
-              <path d="M356 115 C430 156 478 190 553 222 C650 262 736 282 842 238 C882 278 906 326 935 385 C842 424 704 456 553 492" fill="none" stroke="#05060d" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" opacity="0.62" />
-              <path d="M356 115 C430 156 478 190 553 222 C650 262 736 282 842 238 C882 278 906 326 935 385 C842 424 704 456 553 492" fill="none" stroke="#faff00" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="28 18" />
-              <circle cx="553" cy="222" r="7" fill="#faff00" />
-              <circle cx="842" cy="238" r="7" fill="#faff00" />
-              <circle cx="935" cy="385" r="7" fill="#faff00" />
+              <!-- 도착: Backline Stage -->
+              <circle cx="601.6" cy="382.7" r="14" fill="none" stroke="#faff00" stroke-width="3" />
+              <circle cx="601.6" cy="382.7" r="6.5" fill="#faff00" />
+              <line x1="615.6" y1="384" x2="648" y2="388" stroke="#faff00" stroke-width="3" />
+              <rect x="648" y="338" width="228" height="100" fill="#faff00" />
+              <text x="762" y="368" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="10.5" font-weight="900" fill="#05060d" letter-spacing="0.22em">LIVE HALL · B1</text>
+              <text x="762" y="396" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="23" font-weight="900" fill="#05060d">BACKLINE STAGE</text>
+              <text x="762" y="420" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="12.5" font-weight="800" fill="#05060d">홍익빌딩 B1 · 와우산로18길 20</text>
 
-              <rect x="964" y="188" width="188" height="138" fill="#faff00" />
-              <text x="1058" y="238" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="25" font-weight="900" fill="#05060d">BACKLINE</text>
-              <text x="1058" y="269" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="25" font-weight="900" fill="#05060d">STAGE</text>
-              <text x="1058" y="299" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="13" font-weight="900" fill="#05060d" letter-spacing="0.1em">홍익빌딩 B1</text>
-
-              <rect x="74" y="558" width="1052" height="42" fill="rgba(250,255,0,0.1)" stroke="#faff00" stroke-width="1.5" />
-              <text x="600" y="585" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="16" font-weight="900" fill="#faff00" letter-spacing="0.03em">홍대 정문 삼거리 → 홍대야구연습장 → 와우산로18길20 홍익빌딩 B1 → 삼거리포차 → 상수역 방면</text>
-
-              <g transform="translate(1102 80)">
-                <circle cx="0" cy="0" r="28" fill="none" stroke="#ffffff" stroke-width="2" />
-                <text x="0" y="-10" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="13" font-weight="900" fill="#faff00">N</text>
-                <line x1="0" y1="-28" x2="0" y2="28" stroke="#ffffff" stroke-width="1.5" />
-                <line x1="-28" y1="0" x2="28" y2="0" stroke="#ffffff" stroke-width="1.5" />
+              <!-- 나침반 + 출처 -->
+              <g transform="translate(1146 62)">
+                <circle cx="0" cy="0" r="30" fill="rgba(16,19,29,0.85)" />
+                <circle cx="0" cy="0" r="26" fill="none" stroke="#ffffff" stroke-width="2" />
+                <text x="0" y="-9" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="13" font-weight="900" fill="#faff00">N</text>
+                <line x1="0" y1="-26" x2="0" y2="26" stroke="#ffffff" stroke-width="1.5" />
+                <line x1="-26" y1="0" x2="26" y2="0" stroke="#ffffff" stroke-width="1.5" />
               </g>
+              <text x="1190" y="610" text-anchor="end" font-family="Pretendard, sans-serif" font-size="9" fill="rgba(245,246,255,0.4)">© OpenStreetMap contributors</text>
             </svg>
 
             <div class="map-card__legend">
-              <span><i class="dot-y"></i>도보 경로</span>
-              <span><i class="dot-r"></i>홍익대학교 정문 삼거리</span>
-              <span><i class="dot-w"></i>주요 방향 포인트</span>
+              <span><i class="dot-y"></i>도보 경로 · 정문 삼거리 → 와우산로 → 와우산로18길</span>
+              <span><i class="dot-r"></i>홍익대학교 캠퍼스</span>
+              <span><i class="dot-w"></i>실제 도로망 (OpenStreetMap 기준)</span>
             </div>
           </div>
         </div>

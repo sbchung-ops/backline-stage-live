@@ -3,6 +3,7 @@ name: Update Instagram posts
 on:
   workflow_dispatch:
   schedule:
+    # 3시간마다 확인 — 실제 게시물이 바뀐 경우에만 커밋(→ Netlify 빌드)된다.
     - cron: "23 */3 * * *"
 
 permissions:
@@ -18,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       INSTAGRAM_POST_LIMIT: "6"
+      # backline_stage_official 의 IG 비즈니스 계정 ID — 시스템 유저 토큰(EAA)이 이 ID로 직접 조회한다.
+      INSTAGRAM_IG_USER_ID: "17841416414530516"
       SITE_URL: https://sbchung-ops.github.io/backline-stage-live
       LIVE_REPO: sbchung-ops/backline-stage-live
       CMS_API_URL: ${{ secrets.CMS_API_URL }}
@@ -32,6 +35,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+
+      # sharp(이미지 리사이즈)가 필요하다
+      - name: Install dependencies
+        run: npm ci
 
       # 선택: GH_PAT 시크릿이 있으면 60일 토큰을 자동 연장하고 시크릿을 갱신한다.
       # 없으면 이 단계는 건너뛰고, 운영자가 ~50일마다 토큰을 수동 재발급하면 된다.

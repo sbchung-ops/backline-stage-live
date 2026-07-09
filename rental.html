@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preload" href="./assets/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./assets/fonts/pretendard/pretendard-dynamic-subset.css" />
     <link rel="preload" as="image" href="./assets/brand/original-white/logo-white.png" />
     <link rel="preload" as="image" href="./assets/brand/original-white/mascot-white.png" />
     <link rel="preload" as="image" href="./assets/brand/original-white/face-white.png" media="(min-width: 1081px)" />
@@ -12,6 +12,7 @@
 <link rel="icon" type="image/png" href="./assets/brand/mascot-face.png" />
     <link rel="stylesheet" href="./styles.css" />
     <script defer src="./page-transitions.js"></script>
+    <script defer src="./promo.js"></script>
     <meta name="description" content="Backline Stage 대관 절차, 준비 서류, 큐시트 양식, 장비 리스트와 문의 흐름을 안내합니다." />
     <link rel="canonical" href="https://sbchung-ops.github.io/backline-stage-live/rental.html" />
     <meta property="og:site_name" content="Backline Stage" />
@@ -19,12 +20,12 @@
     <meta property="og:description" content="Backline Stage 대관 절차, 준비 서류, 큐시트 양식, 장비 리스트와 문의 흐름을 안내합니다." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sbchung-ops.github.io/backline-stage-live/rental.html" />
-    <meta property="og:image" content="https://sbchung-ops.github.io/backline-stage-live/assets/hero-reference-style.png" />
+    <meta property="og:image" content="https://sbchung-ops.github.io/backline-stage-live/assets/hero-reference-style.jpg" />
     <meta property="og:locale" content="ko_KR" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="대관 안내 | Backline Stage" />
     <meta name="twitter:description" content="Backline Stage 대관 절차, 준비 서류, 큐시트 양식, 장비 리스트와 문의 흐름을 안내합니다." />
-    <meta name="twitter:image" content="https://sbchung-ops.github.io/backline-stage-live/assets/hero-reference-style.png" />
+    <meta name="twitter:image" content="https://sbchung-ops.github.io/backline-stage-live/assets/hero-reference-style.jpg" />
     <script>window.BACKLINE_API_DISABLED=true;</script>
     <script defer src="./site-data.js"></script>
     <script defer src="./cms-content.js"></script>
@@ -131,7 +132,7 @@
       </section>
 
       <!-- 3. 비용 -->
-      <section class="section">
+      <section class="section" id="pricing">
         <div class="wrap">
           <div class="section-head">
             <div>
@@ -146,7 +147,7 @@
             <div class="price-card">
               <span class="price-tag">Weekday</span>
               <h3>평일 / 6시간</h3>
-              <div class="amount">800<small> 천원~</small></div>
+              <div class="amount">800,000<small>원</small></div>
               <ul>
                 <li>기본 PA · 조명 패키지</li>
                 <li>운영 매니저 1인</li>
@@ -157,7 +158,7 @@
             <div class="price-card featured">
               <span class="price-tag">Weekend</span>
               <h3>주말 / 6시간</h3>
-              <div class="amount">1,200<small> 천원~</small></div>
+              <div class="amount">1,200,000<small>원</small></div>
               <ul>
                 <li>기본 PA · 조명 패키지</li>
                 <li>운영 매니저 1인 + 무대 스태프 1인</li>

@@ -32,9 +32,22 @@ const payload = {
   videos,
 };
 
+// updatedAt 만 바뀐 경우 파일을 다시 쓰지 않는다 — 안 그러면 크론이 돌 때마다
+// 커밋이 생겨 Netlify 빌드(크레딧)가 낭비된다. 실제 영상 목록이 바뀔 때만 커밋된다.
+const previous = await readExisting(outputPath);
+if (previous && sameFeedContent(previous, payload)) {
+  console.log(`[youtube] 영상 변경 없음 — ${path.relative(root, outputPath)} 를 그대로 둡니다.`);
+  process.exit(0);
+}
+
 await mkdir(path.dirname(outputPath), { recursive: true });
 await writeFile(outputPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
 console.log(`[youtube] wrote ${videos.length} videos to ${path.relative(root, outputPath)}`);
+
+function sameFeedContent(a, b) {
+  const strip = (x) => JSON.stringify({ provider: x.provider, playlistId: x.playlistId, videos: x.videos });
+  return strip(a) === strip(b);
+}
 
 async function fetchFromDataApi({ apiKey, playlistId, limit }) {
   const url = new URL("https://www.googleapis.com/youtube/v3/playlistItems");

@@ -3,7 +3,8 @@ name: Update YouTube videos
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 * * * *"
+    # 3시간마다 확인 — 실제 영상 목록이 바뀐 경우에만 커밋(→ Netlify 빌드)된다.
+    - cron: "17 */3 * * *"
 
 permissions:
   contents: write

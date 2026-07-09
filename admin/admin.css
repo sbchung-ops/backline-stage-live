@@ -1,10 +1,4 @@
-@font-face {
-  font-family: "Pretendard Variable";
-  font-weight: 45 920;
-  font-style: normal;
-  font-display: block;
-  src: url("../assets/fonts/PretendardVariable.woff2") format("woff2-variations");
-}
+/* Pretendard Variable — index.html 이 다이나믹 서브셋 CSS 를 로드한다 */
 
 :root {
   --bg: #05060d;

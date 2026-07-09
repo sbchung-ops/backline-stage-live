@@ -57,6 +57,15 @@
       replaceText("010-3402-4358", phone);
     }
 
+    // 장비 리스트/큐시트 엑셀 — Sanity 에 업로드된 파일이 있으면 다운로드 버튼을 그 파일로 교체.
+    // CDN 은 다른 도메인이라 download 속성이 무시되므로 ?dl= 로 강제 다운로드시킨다.
+    const equipmentFile = clean(settings.equipment_file_url);
+    if (equipmentFile) {
+      const fileName = clean(settings.equipment_file_name) || "equipment-list.xlsx";
+      const sep = equipmentFile.includes("?") ? "&" : "?";
+      setLinks('a[href*="equipment-list.xlsx"]', `${equipmentFile}${sep}dl=${encodeURIComponent(fileName)}`);
+    }
+
     if (kakao) setLinks('a[href*="pf.kakao.com"]', kakao);
     if (instagram) setLinks('a[href*="instagram.com"]', instagram);
     if (youtube) setLinks('a[href*="youtube.com/@BacklineStage"]', youtube);
@@ -219,6 +228,8 @@
     const featured = schedules.filter((item) => item.featured !== false);
     const source = featured.length ? featured : schedules;
     const items = source.filter((item) => clean(item.image?.url)).slice(0, 8);
+    // 링크 미지정 포스터는 대관 일정의 예정 공연 섹션으로 보낸다.
+    const defaultUrl = "./schedule.html#upcoming";
 
     // 데이터가 없으면 오르빗을 숨기고 "준비된 공연이 없습니다" 문구를 노출한다.
     if (!items.length || !stage) {
@@ -231,7 +242,7 @@
     stage.innerHTML = items
       .map((item, index) => {
         const image = item.image || {};
-        const url = clean(item.url || "./schedule.html");
+        const url = clean(item.url) || defaultUrl;
         return `
           <a class="poster-card" href="${escapeAttr(url)}" data-poster-card data-title="${escapeAttr(item.title || "공연 예정")}">
             <span class="date-badge">${escapeHtml(badge(item) || String(index + 1).padStart(2, "0"))}</span>
