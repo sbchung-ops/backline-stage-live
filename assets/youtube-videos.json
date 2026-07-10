@@ -1,16 +1,16 @@
 {
-  "provider": "manual-fallback",
+  "provider": "youtube-atom-feed",
   "playlistId": "PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd",
-  "updatedAt": "2026-06-18T00:00:00.000Z",
+  "updatedAt": "2026-07-10T09:53:00.005Z",
   "videos": [
     {
-      "id": "videoseries",
-      "title": "Backline Stage 유튜브 플레이리스트",
-      "description": "Backline Stage 유튜브 플레이리스트",
-      "url": "https://www.youtube.com/playlist?list=PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd",
-      "embedUrl": "https://www.youtube.com/embed/videoseries?list=PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd&rel=0&modestbranding=1",
-      "thumbnail": "./assets/poster-06.png",
-      "publishedAt": "2026-06-18T00:00:00.000Z",
+      "id": "mKgGhvinYxE",
+      "title": "Backline Stage님의 실시간 스트림",
+      "description": "",
+      "url": "https://www.youtube.com/watch?v=mKgGhvinYxE",
+      "embedUrl": "https://www.youtube.com/embed/mKgGhvinYxE?rel=0&modestbranding=1",
+      "thumbnail": "https://i2.ytimg.com/vi/mKgGhvinYxE/hqdefault.jpg",
+      "publishedAt": "2026-07-10T06:36:45+00:00",
       "channelTitle": "Backline Stage"
     }
   ]
