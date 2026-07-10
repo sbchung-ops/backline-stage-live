@@ -1,6 +1,6 @@
 {
   "provider": "sanity",
-  "updatedAt": "2026-07-10T04:27:37.103Z",
+  "updatedAt": "2026-07-10T09:54:52.484Z",
   "sources": {
     "settings": "cms",
     "sections": "cms",
@@ -64,8 +64,78 @@
       "button_label": "할인가 확인하기 →"
     }
   },
-  "venuePhotos": [],
-  "galleryPhotos": [],
+  "venuePhotos": [
+    {
+      "title": "",
+      "caption": "",
+      "category": "STAGE",
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/e53935ca1f36de5f118fa1931a6744397dfb72db-6224x4672.jpg?w=1600&q=80&auto=format",
+        "alt": "Backline Stage"
+      }
+    },
+    {
+      "title": "",
+      "caption": "",
+      "category": "STAGE",
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/c5fd92516008f4557b26dac3ff0b45e7983cb46b-6224x4672.jpg?w=1600&q=80&auto=format",
+        "alt": "Backline Stage"
+      }
+    },
+    {
+      "title": "",
+      "caption": "",
+      "category": "STAGE",
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/2bd17b8aa4b1c7017710b4e95033360311cf9a12-6224x4672.jpg?w=1600&q=80&auto=format",
+        "alt": "Backline Stage"
+      }
+    },
+    {
+      "title": "",
+      "caption": "",
+      "category": "BACKSTAGE",
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/a011c10f68b58a6936e5f7ad24e531c65b6856fb-6224x4672.jpg?w=1600&q=80&auto=format",
+        "alt": "Backline Stage"
+      }
+    }
+  ],
+  "galleryPhotos": [
+    {
+      "title": "",
+      "category": "DETAIL",
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/d73e8b7b5d9be1ae6ce83cf59f84f630effac623-6224x4672.jpg?w=1600&q=80&auto=format",
+        "alt": "Backline Stage"
+      }
+    },
+    {
+      "title": "",
+      "category": "STAGE",
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/290c92ca5277986d1c1e69d1a7053e2ea8566021-4672x6224.jpg?w=1600&q=80&auto=format",
+        "alt": "Backline Stage"
+      }
+    },
+    {
+      "title": "",
+      "category": "STAGE",
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/c5fd92516008f4557b26dac3ff0b45e7983cb46b-6224x4672.jpg?w=1600&q=80&auto=format",
+        "alt": "Backline Stage"
+      }
+    },
+    {
+      "title": "",
+      "category": "STAGE",
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/5300d0d76a56cef0ce5bc057e1d05422383cdd1f-3776x2832.jpg?w=1600&q=80&auto=format",
+        "alt": "Backline Stage"
+      }
+    }
+  ],
   "schedules": [
     {
       "title": "토끼공연",
