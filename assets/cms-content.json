@@ -1,6 +1,6 @@
 {
   "provider": "sanity",
-  "updatedAt": "2026-07-11T08:16:46.754Z",
+  "updatedAt": "2026-07-11T10:36:00.572Z",
   "sources": {
     "settings": "cms",
     "sections": "cms",
@@ -139,7 +139,7 @@
   "schedules": [
     {
       "title": "토끼공연",
-      "date": "2026-07-09",
+      "date": "2026-07-16",
       "dateBadge": "",
       "url": "",
       "featured": true,
