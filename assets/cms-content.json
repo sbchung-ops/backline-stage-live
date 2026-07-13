@@ -1,6 +1,6 @@
 {
   "provider": "sanity",
-  "updatedAt": "2026-07-13T02:30:57.041Z",
+  "updatedAt": "2026-07-13T02:45:38.604Z",
   "sources": {
     "settings": "cms",
     "sections": "cms",
@@ -35,7 +35,7 @@
     "home_posters": {
       "eyebrow": "This month · ±5 days",
       "heading": "이번 달, 무대 위는 이렇게",
-      "body": "오늘로부터 5일 이내 등록된 공연 포스터를 먼저 보여줍니다. 전체 일정은 캘린더에서 확인하세요.",
+      "body": "이번달 공연 리스트",
       "buttonLabel": "전체 일정 더보기 →",
       "buttonUrl": "./schedule.html"
     },

@@ -181,7 +181,7 @@
             <div>
               <p class="eyebrow" data-cms-field="eyebrow">This month · ±5 days</p>
               <h2 data-cms-field="heading">이번 달, 무대 위는 이렇게</h2>
-              <p class="lead" data-cms-field="body">오늘로부터 5일 이내 등록된 공연 포스터를 먼저 보여줍니다. 전체 일정은 캘린더에서 확인하세요.</p>
+              <p class="lead" data-cms-field="body">이번달 공연 리스트</p>
             </div>
             <div class="section-head__r">
               <a class="btn ghost" data-cms-field="button" href="./schedule.html">전체 일정 더보기 →</a>
@@ -375,7 +375,7 @@
               card.style.zIndex = String(20 - Math.abs(offset));
             });
 
-            if (countLabel) countLabel.textContent = `${String(current + 1).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`;
+            if (countLabel) countLabel.textContent = cards[current]?.dataset.date || "LIVE";
             if (titleLabel) titleLabel.textContent = cards[current]?.dataset.title || "";
           };
 

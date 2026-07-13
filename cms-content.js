@@ -241,12 +241,13 @@
 
     // 등록된 개수만큼(1개여도) 카드를 재구성한다 — 더미로 채우지 않는다.
     stage.innerHTML = items
-      .map((item, index) => {
+      .map((item) => {
         const image = item.image || {};
         const url = clean(item.url) || defaultUrl;
+        const dateLabel = badge(item) || "LIVE";
         return `
-          <a class="poster-card" href="${escapeAttr(url)}" data-poster-card data-title="${escapeAttr(item.title || "공연 예정")}">
-            <span class="date-badge">${escapeHtml(badge(item) || String(index + 1).padStart(2, "0"))}</span>
+          <a class="poster-card" href="${escapeAttr(url)}" data-poster-card data-title="${escapeAttr(item.title || "공연 예정")}" data-date="${escapeAttr(dateLabel)}">
+            <span class="date-badge">${escapeHtml(dateLabel)}</span>
             <img src="${escapeAttr(image.url)}" alt="${escapeAttr(image.alt || item.title || "공연 포스터")}" loading="lazy" decoding="async" />
             <span class="meta">${escapeHtml(item.title || "공연 예정")}</span>
           </a>`;
