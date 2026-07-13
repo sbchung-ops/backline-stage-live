@@ -348,9 +348,9 @@
     });
   }
 
-  // 직접 지정한 날짜 표시가 있으면 그것을, 없으면 공연일로 자동 계산한다.
+  // 공연일이 있으면 정확한 날짜를 우선 표시하고, 날짜가 없을 때만 직접 입력 뱃지를 쓴다.
   function badge(item) {
-    return clean(item.dateBadge) || badgeFor(item.eventDate || item.date);
+    return badgeFor(item.eventDate || item.date) || clean(item.dateBadge);
   }
 
   function isUpcomingSchedule(item) {
@@ -385,7 +385,7 @@
     return date;
   }
 
-  // 공연일(YYYY-MM-DD) → 접속 시점 기준 뱃지: TODAY / D-3 / 07.12 SAT
+  // 공연일(YYYY-MM-DD) → 정확한 월/일 표기: 07/16
   function badgeFor(dateStr) {
     const raw = clean(dateStr);
     const parts = raw.split("-").map(Number);
@@ -395,17 +395,9 @@
     if (Number.isNaN(ev.getTime())) return "";
     ev.setHours(0, 0, 0, 0);
 
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    const diff = Math.round((ev.getTime() - today.getTime()) / 86400000);
-    if (diff === 0) return "TODAY";
-    if (diff > 0 && diff <= 7) return `D-${diff}`;
-
-    const weekday = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"][ev.getDay()];
     const mm = String(ev.getMonth() + 1).padStart(2, "0");
     const dd = String(ev.getDate()).padStart(2, "0");
-    return `${mm}.${dd} ${weekday}`;
+    return `${mm}/${dd}`;
   }
 
   function clean(value) {
