@@ -225,8 +225,9 @@
     const stage = orbit.querySelector("[data-poster-stage]");
     const emptyNote = document.querySelector("[data-poster-empty]");
 
-    const featured = schedules.filter((item) => item.featured !== false);
-    const source = featured.length ? featured : schedules;
+    const upcomingSchedules = schedules.filter(isUpcomingSchedule);
+    const featured = upcomingSchedules.filter((item) => item.featured !== false);
+    const source = featured.length ? featured : upcomingSchedules;
     const items = source.filter((item) => clean(item.image?.url)).slice(0, 8);
     // 링크 미지정 포스터는 대관 일정의 예정 공연 섹션으로 보낸다.
     const defaultUrl = "./schedule.html#upcoming";
@@ -348,7 +349,39 @@
 
   // 직접 지정한 날짜 표시가 있으면 그것을, 없으면 공연일로 자동 계산한다.
   function badge(item) {
-    return clean(item.dateBadge) || badgeFor(item.date);
+    return clean(item.dateBadge) || badgeFor(item.eventDate || item.date);
+  }
+
+  function isUpcomingSchedule(item) {
+    const eventDate = parseEventDate(item.eventDate || item.date);
+    if (!eventDate) return true;
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return eventDate.getTime() >= today.getTime();
+  }
+
+  function parseEventDate(value) {
+    const raw = clean(value);
+    const match = raw.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+    if (!match) return null;
+
+    const year = Number(match[1]);
+    const month = Number(match[2]);
+    const day = Number(match[3]);
+    const date = new Date(year, month - 1, day);
+
+    if (
+      Number.isNaN(date.getTime()) ||
+      date.getFullYear() !== year ||
+      date.getMonth() !== month - 1 ||
+      date.getDate() !== day
+    ) {
+      return null;
+    }
+
+    date.setHours(0, 0, 0, 0);
+    return date;
   }
 
   // 공연일(YYYY-MM-DD) → 접속 시점 기준 뱃지: TODAY / D-3 / 07.12 SAT
