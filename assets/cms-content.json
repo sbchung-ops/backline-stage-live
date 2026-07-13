@@ -4,6 +4,7 @@
   "sources": {
     "settings": "cms",
     "sections": "cms",
+    "homeHeroPhotos": "cms",
     "venuePhotos": "cms",
     "galleryPhotos": "cms",
     "schedules": "cms",
@@ -64,6 +65,7 @@
       "button_label": "할인가 확인하기 →"
     }
   },
+  "homeHeroPhotos": [],
   "venuePhotos": [
     {
       "title": "",

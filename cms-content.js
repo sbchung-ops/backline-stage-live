@@ -18,6 +18,7 @@
       state.content = content;
       applySettings(content.settings || {});
       applySections(content.sections || {});
+      if (content.sources?.homeHeroPhotos === "cms") applyHomeHeroPhotos(content.homeHeroPhotos || []);
       if (content.sources?.venuePhotos === "cms") applyVenueCarousel(content.venuePhotos || []);
       if (content.sources?.schedules === "cms") {
         applyScheduleGallery(content.schedules || []);
@@ -171,6 +172,21 @@
         if (section.buttonUrl) button.href = section.buttonUrl;
       }
     }
+  }
+
+  function applyHomeHeroPhotos(photos) {
+    const media = document.querySelector(".hero__media");
+    if (!media || !photos.length) return;
+
+    const images = photos
+      .map((photo) => ({ ...photo, image: photo.image || {} }))
+      .filter((photo) => clean(photo.image.url));
+    if (!images.length) return;
+
+    media.querySelectorAll(".hero__media-item").forEach((item, index) => {
+      const photo = images[index % images.length];
+      item.style.setProperty("--hero-photo", cssUrl(photo.image.url));
+    });
   }
 
   function applyVenueCarousel(photos) {
@@ -414,5 +430,9 @@
 
   function escapeAttr(value) {
     return escapeHtml(value).replaceAll("'", "&#39;");
+  }
+
+  function cssUrl(value) {
+    return `url(${JSON.stringify(clean(value))})`;
   }
 })();
