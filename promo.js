@@ -86,7 +86,7 @@
     const amount = card?.querySelector(".amount");
     if (!amount) return;
 
-    const sale = promo ? clean(saleAmount) : "";
+    const sale = promo ? clean(saleAmount) || calculateDiscountedAmount(base, promo.discount_label) : "";
     if (sale) {
       amount.classList.add("amount--sale");
       amount.innerHTML = `<s class="amount-was">${escapeHtml(formatWon(base))}</s><span class="amount-now">${escapeHtml(formatWon(sale))}<small>원</small></span>`;
@@ -105,6 +105,15 @@
     const raw = clean(value).replaceAll(",", "");
     if (!/^\d+$/.test(raw)) return clean(value);
     return Number(raw).toLocaleString("ko-KR");
+  }
+
+  function calculateDiscountedAmount(base, label) {
+    const baseNumber = Number(clean(base).replaceAll(",", ""));
+    const match = clean(label).match(/(\d+(?:\.\d+)?)\s*%/);
+    if (!Number.isFinite(baseNumber) || !match) return "";
+    const rate = Number(match[1]);
+    if (!Number.isFinite(rate) || rate <= 0 || rate >= 100) return "";
+    return String(Math.round((baseNumber * (100 - rate)) / 100));
   }
 
   // ─── 홈: 광고 팝업 ───────────────────────────────────────────────
