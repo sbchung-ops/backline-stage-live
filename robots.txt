@@ -4,4 +4,4 @@ Disallow: /admin/
 Disallow: /api/admin/
 Disallow: /*.md$
 
-Sitemap: https://sbchung-ops.github.io/backline-stage-live/sitemap.xml
+Sitemap: https://backline.co.kr/sitemap.xml
