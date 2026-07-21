@@ -13,18 +13,18 @@
     <link rel="stylesheet" href="./styles.css" />
     <script defer src="./page-transitions.js"></script>
     <script defer src="./promo.js"></script>
-    <meta name="description" content="Backline Stage 대관 절차, 준비 서류, 큐시트 양식, 장비 리스트와 문의 흐름을 안내합니다." />
+    <meta name="description" content="Backline Stage 대관 절차, 준비 서류, 장비·운영 옵션과 문의 흐름을 안내합니다." />
     <link rel="canonical" href="https://sbchung-ops.github.io/backline-stage-live/rental.html" />
     <meta property="og:site_name" content="Backline Stage" />
     <meta property="og:title" content="대관 안내 | Backline Stage" />
-    <meta property="og:description" content="Backline Stage 대관 절차, 준비 서류, 큐시트 양식, 장비 리스트와 문의 흐름을 안내합니다." />
+    <meta property="og:description" content="Backline Stage 대관 절차, 준비 서류, 장비·운영 옵션과 문의 흐름을 안내합니다." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sbchung-ops.github.io/backline-stage-live/rental.html" />
     <meta property="og:image" content="https://sbchung-ops.github.io/backline-stage-live/assets/hero-reference-style.jpg" />
     <meta property="og:locale" content="ko_KR" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="대관 안내 | Backline Stage" />
-    <meta name="twitter:description" content="Backline Stage 대관 절차, 준비 서류, 큐시트 양식, 장비 리스트와 문의 흐름을 안내합니다." />
+    <meta name="twitter:description" content="Backline Stage 대관 절차, 준비 서류, 장비·운영 옵션과 문의 흐름을 안내합니다." />
     <meta name="twitter:image" content="https://sbchung-ops.github.io/backline-stage-live/assets/hero-reference-style.jpg" />
     <script>window.BACKLINE_API_DISABLED=true;</script>
     <script defer src="./site-data.js"></script>
@@ -59,7 +59,7 @@
             <p class="eyebrow">PAGE · 03 / RENTAL</p>
             <h1>대관<br /><span class="stamp">안내</span></h1>
             <p class="lead">
-              신청 → 계약 → 테크라이더 → 공연 진행까지 4단계로 진행됩니다. 비용, 포함 항목, 큐시트 양식, 가능 일정까지 이 페이지에서 한 번에 확인하세요.
+              신청 → 계약 → 테크라이더 → 공연 진행까지 4단계로 진행됩니다. 비용, 포함 항목, 장비·운영 옵션, 가능 일정까지 이 페이지에서 한 번에 확인하세요.
             </p>
           </div>
         </div>
@@ -143,80 +143,137 @@
           </div>
 
           <div class="price-grid">
-            <div class="price-card">
+            <div class="price-card" data-price-key="weekday">
               <span class="price-tag">Weekday</span>
-              <h3>평일 / 7시간</h3>
+              <h3>평일 (월-목)</h3>
               <div class="amount">800,000<small>원</small></div>
               <ul>
-                <li>기본 PA · 조명 패키지</li>
-                <li>운영 매니저 1인</li>
-                <li>리허설 1.5h 무료</li>
+                <li>7시간 기본 대관</li>
+                <li>기본 장비·운영 포함</li>
+                <li>부가세 별도</li>
               </ul>
             </div>
-            <div class="price-card featured">
-              <span class="price-tag">Weekend</span>
-              <h3>주말 / 7시간</h3>
-              <div class="amount">1,200,000<small>원</small></div>
+            <div class="price-card featured" data-price-key="fridaySunday">
+              <span class="price-tag">Friday · Sunday</span>
+              <h3>금요일 · 일요일</h3>
+              <div class="amount">1,000,000<small>원</small></div>
               <ul>
-                <li>기본 PA · 조명 패키지</li>
-                <li>운영 매니저 1인 + 무대 스태프 1인</li>
-                <li>리허설 1.5h 무료</li>
+                <li>7시간 기본 대관</li>
+                <li>기본 장비·운영 포함</li>
+                <li>부가세 별도</li>
               </ul>
             </div>
-            <div class="price-card">
-              <span class="price-tag">Add-on</span>
-              <h3>추가 옵션</h3>
-              <div class="amount">+ <small>협의</small></div>
+            <div class="price-card" data-price-key="peak">
+              <span class="price-tag">Peak</span>
+              <h3>토요일 · 공휴일 · 공휴일 전날</h3>
+              <div class="amount">1,100,000<small>원</small></div>
               <ul>
-                <li>시간 추가 · 영상 송출</li>
-                <li>멀티캠 촬영 · 라이브 스트리밍</li>
-                <li>추가 조명 / 무빙 / 스모크</li>
-                <li>이벤트 백드롭 · 사인물</li>
+                <li>7시간 기본 대관</li>
+                <li>기본 장비·운영 포함</li>
+                <li>부가세 별도</li>
               </ul>
             </div>
           </div>
+          <p class="price-note">요일 구분이 중복되는 날은 높은 금액을 적용합니다. 시간 추가, 영상 촬영팀, 장비 옵션 추가가 가능하며 세부 견적은 문의로 조율합니다.</p>
         </div>
       </section>
 
-      <!-- 4. 큐시트 -->
+      <!-- 4. 장비·운영 -->
       <section class="section dark">
         <div class="wrap">
           <div class="section-head">
             <div>
-              <p class="eyebrow">Cue sheet</p>
-              <h2>큐시트 양식</h2>
-              <p class="lead">행사 진행 순서, 음향·조명 큐, 인원 배치를 정리하는 표준 양식입니다. 운영 협의 시 공유하면 진행이 매끄럽습니다.</p>
+              <p class="eyebrow">Gear · Operation</p>
+              <h2>장비 · 운영 안내</h2>
+              <p class="lead">기본 제공 장비와 유료 장비·운영 옵션, 영상·음원 소스 제공 항목을 구분해 정리했습니다.</p>
             </div>
-            <div class="section-head__r">
-              <a class="btn hot" href="./assets/equipment-list.xlsx" download>큐시트 다운로드 ↓</a>
-            </div>
+            <div class="section-head__r"><span class="num">— 04</span></div>
           </div>
 
-          <div class="cuesheet">
-            <div class="cuesheet__copy">
-              <h3>큐시트는 왜 필요할까</h3>
-              <p>5분 단위로 무대 위에서 일어나는 일을 정리해두면, 음향·조명·무대 스태프가 같은 그림을 보고 움직일 수 있습니다. 첫 출연 1–2팀이라면 견본 양식만 채워도 충분합니다.</p>
+          <div class="info-tables">
+            <div class="info-table-card">
+              <h3>기본 장비</h3>
+              <div class="table-scroll">
+                <table class="rental-table">
+                  <thead><tr><th>구분</th><th>기본 제공 내용</th></tr></thead>
+                  <tbody>
+                    <tr><td>마이크</td><td>Shure Beta58A 유선 3개 / Shure SM57 3개 / sE Electronics sE7 1개</td></tr>
+                    <tr><td>모니터</td><td>웨지 모니터 2대 / Behringer P2 유선 IEM 6대(파트별 고정 배정)</td></tr>
+                    <tr><td>건반</td><td>Kurzweil SP7 Grand 1대</td></tr>
+                    <tr><td>DI · 스탠드</td><td>Radial JDI Stereo 2대 / J48 1대 / ProD2 1대 / 노트북 스탠드 1대</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <div class="cuesheet__preview">
-              <table class="cuesheet-table">
-                <thead>
-                  <tr><th>시간</th><th>아티스트</th><th>SOUND</th><th>LIGHT</th><th>비고</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>18:30</td><td>OPEN</td><td>BGM L-1</td><td>House on</td><td>입장 시작</td></tr>
-                  <tr><td>19:00</td><td>1st BAND</td><td>Mix A-1</td><td>Cue 02</td><td>30분</td></tr>
-                  <tr><td>19:35</td><td>전환</td><td>BGM L-2</td><td>Cue 03</td><td>5분</td></tr>
-                  <tr><td>19:40</td><td>2nd BAND</td><td>Mix A-2</td><td>Cue 04</td><td>40분</td></tr>
-                  <tr><td>20:25</td><td>HEAD</td><td>Mix A-3</td><td>Cue 05 + 스모크</td><td>50분</td></tr>
-                  <tr><td>21:20</td><td>OUT</td><td>BGM L-3</td><td>House on</td><td>퇴장</td></tr>
-                </tbody>
-              </table>
+            <div class="info-table-card">
+              <h3>유료 장비 · 운영 옵션</h3>
+              <div class="table-scroll">
+                <table class="rental-table">
+                  <thead><tr><th>옵션</th><th>비용</th><th>기준 · 비고</th></tr></thead>
+                  <tbody>
+                    <tr><td>Sennheiser EW-D 835 무선 마이크</td><td>1CH 30,000원 / 2CH 50,000원</td><td>최대 2CH</td></tr>
+                    <tr><td>Sennheiser EW IEM G4 무선 IEM</td><td>35,000원 / CH</td><td>최대 2CH</td></tr>
+                    <tr><td>Shure SE215 이어폰</td><td>20,000원 / 개</td><td>최대 8개</td></tr>
+                    <tr><td>메인 건반용 볼륨 페달</td><td>20,000원</td><td>SP7 Grand 추가</td></tr>
+                    <tr><td>Yamaha MODX 7+</td><td>100,000원</td><td>1대, 볼륨 페달 포함</td></tr>
+                    <tr><td>공연장 플레이백 운영</td><td>Mono · Stereo 50,000원</td><td>Multi는 별도 협의</td></tr>
+                    <tr><td>제휴 업체 장비 렌탈</td><td>별도 견적</td><td>기본 보유 수량 초과 또는 특정 모델 요청 시 가능</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="info-table-card">
+              <h3>영상 · 음원 소스 및 세부 오퍼레이팅</h3>
+              <div class="table-scroll">
+                <table class="rental-table">
+                  <thead><tr><th>옵션</th><th>비용</th><th>제공 · 적용 기준</th></tr></thead>
+                  <tbody>
+                    <tr><td>영상 녹화본 + 2트랙 음원</td><td>20곡 이하 100,000원 / 21곡 이상 150,000원</td><td>선택 카메라 영상 소스 + 공연 실황 Stereo 2트랙</td></tr>
+                    <tr><td>멀티트랙 원본 제공</td><td>100,000원</td><td>개별 트랙 원본 + 2트랙 음원 포함</td></tr>
+                    <tr><td>음향 세부 오퍼레이팅</td><td>300,000원</td><td>25곡 이내 · 본공연 3시간 이내</td></tr>
+                    <tr><td>조명 세부 오퍼레이팅</td><td>300,000원</td><td>25곡 이내 · 본공연 3시간 이내</td></tr>
+                    <tr><td>기준 초과 세부 오퍼레이팅</td><td>별도 협의</td><td>25곡 또는 본공연 3시간 초과</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 5. 다음 단계 -->
+      <!-- 5. 시간표 -->
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Timeline sample</p>
+              <h2>시간표 예시</h2>
+              <p class="lead">아래 시간표는 가능한 편성 예시입니다. 대관 시간 조정과 추가 조율은 문의로 확인해 주세요.</p>
+            </div>
+            <div class="section-head__r"><span class="num">— 06</span></div>
+          </div>
+
+          <div class="table-scroll">
+            <table class="rental-table timeline-table">
+              <thead>
+                <tr><th>구분</th><th>안내 · 세팅</th><th>리허설</th><th>입장 · 전환</th><th>본공연</th><th>정리 · 기념촬영 · 퇴장</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>7시간 A</td><td>13:30-14:00</td><td>14:00-17:00</td><td>17:00-18:00</td><td>18:00-20:00</td><td>20:00-20:30</td></tr>
+                <tr><td>7시간 B</td><td>13:30-14:00</td><td>14:00-17:30</td><td>17:30-19:00</td><td>19:00-20:00</td><td>20:00-20:30</td></tr>
+                <tr><td>8시간</td><td>13:30-14:00</td><td>14:00-17:30</td><td>17:30-19:00</td><td>19:00-21:00</td><td>21:00-21:30</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul class="timeline-notes">
+            <li>본공연은 최대 3시간 기준입니다.</li>
+            <li>정리 · 기념촬영 · 퇴장은 30분 기준입니다.</li>
+            <li>대관 시간 조정, 추가 조율 가능 여부는 문의로 확인해 주세요.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 6. 다음 단계 -->
       <section class="section">
         <div class="wrap">
           <div class="section-head">
@@ -247,7 +304,7 @@
             <a href="./assets/equipment-list.xlsx" download>
               <span class="ch-tag">Sheet</span>
               <span class="ch-name">장비 리스트 ↓</span>
-              <span class="ch-desc">기본 장비와 큐시트 양식 확인</span>
+              <span class="ch-desc">기본 장비와 운영 옵션 확인</span>
             </a>
           </div>
         </div>

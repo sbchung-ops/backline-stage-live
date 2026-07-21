@@ -1621,6 +1621,16 @@ p, li, th, td, small, .lead { word-break: keep-all; overflow-wrap: break-word; }
 .price-card ul { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--ink-3); margin-top: 8px; }
 .price-card.featured ul { color: rgba(255,255,255,0.78); }
 .price-card li::before { content: "+"; color: var(--accent); margin-right: 8px; font-weight: 800; }
+.price-note {
+  margin-top: 14px;
+  padding: 14px 18px;
+  border: 1.5px solid var(--ink);
+  background: rgba(250,255,0,0.12);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.65;
+}
 
 .checklist {
   display: grid;
@@ -1689,6 +1699,89 @@ p, li, th, td, small, .lead { word-break: keep-all; overflow-wrap: break-word; }
 .cuesheet-table td:nth-child(1) { width: 72px; white-space: nowrap; }
 .cuesheet-table th:nth-child(2),
 .cuesheet-table td:nth-child(2) { width: 110px; }
+
+.info-tables {
+  display: grid;
+  gap: 22px;
+}
+.info-table-card {
+  border: 1.5px solid rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.055);
+  overflow: hidden;
+}
+.info-table-card h3 {
+  padding: 20px 22px;
+  border-bottom: 1.5px solid rgba(255,255,255,0.22);
+  color: var(--bg);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+.rental-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.rental-table th,
+.rental-table td {
+  padding: 14px 16px;
+  border: 1px solid var(--line-soft);
+  text-align: left;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+.rental-table th {
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.rental-table td:first-child {
+  font-weight: 900;
+  color: var(--ink);
+}
+.timeline-table {
+  border: 1.5px solid var(--ink);
+}
+.timeline-table th,
+.timeline-table td {
+  text-align: center;
+}
+.timeline-notes {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+.timeline-notes li {
+  padding: 13px 16px;
+  background: var(--surface);
+  border: 1.5px solid var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+.timeline-notes li::before {
+  content: "!";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  background: var(--hot);
+  color: var(--void);
+  font-weight: 900;
+}
 
 /* ─── schedule ───────────────────────────────────────────────── */
 

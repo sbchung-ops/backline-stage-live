@@ -5,16 +5,18 @@
   // 미리보기: 아무 페이지나 ?promo=preview 를 붙이면 Sanity 설정과 무관하게 예시 이벤트가 켜진다.
   const defaults = {
     weekday: "800,000",
-    weekend: "1,200,000",
+    fridaySunday: "1,000,000",
+    peak: "1,100,000",
     promo: {
       enabled: false,
       end_date: "",
       discount_label: "25% OFF",
       weekday_sale: "600,000",
-      weekend_sale: "900,000",
+      friday_sunday_sale: "",
+      peak_sale: "",
       badge: "EVENT",
       title: "대관료 할인 이벤트",
-      body: "지금 대관 문의하시면 평일·주말 대관료를 할인가로 진행합니다.\n마감 전에 일정을 먼저 확인해 보세요.",
+      body: "지금 대관 문의하시면 요일별 대관료와 옵션 견적을 안내드립니다.\n마감 전에 일정을 먼저 확인해 보세요.",
       button_label: "할인가 확인하기 →",
     },
   };
@@ -49,10 +51,12 @@
 
   function mergePricing(cms) {
     const promo = { ...defaults.promo, ...(cms?.promo || {}) };
+    if (clean(promo.body).includes("평일·주말")) promo.body = defaults.promo.body;
     if (isPreview) promo.enabled = true;
     return {
       weekday: clean(cms?.weekday) || defaults.weekday,
-      weekend: clean(cms?.weekend) || defaults.weekend,
+      fridaySunday: clean(cms?.friday_sunday) || defaults.fridaySunday,
+      peak: clean(cms?.peak) || defaults.peak,
       promo,
     };
   }
@@ -73,13 +77,12 @@
     if (!grid) return;
 
     renderCard(grid, "weekday", pricing.weekday, promoActive ? pricing.promo : null, pricing.promo.weekday_sale);
-    renderCard(grid, "weekend", pricing.weekend, promoActive ? pricing.promo : null, pricing.promo.weekend_sale);
+    renderCard(grid, "fridaySunday", pricing.fridaySunday, promoActive ? pricing.promo : null, pricing.promo.friday_sunday_sale);
+    renderCard(grid, "peak", pricing.peak, promoActive ? pricing.promo : null, pricing.promo.peak_sale);
   }
 
-  function renderCard(grid, tagText, base, promo, saleAmount) {
-    const card = [...grid.querySelectorAll(".price-card")].find(
-      (node) => node.querySelector(".price-tag")?.textContent.trim().toLowerCase() === tagText,
-    );
+  function renderCard(grid, priceKey, base, promo, saleAmount) {
+    const card = grid.querySelector(`.price-card[data-price-key="${priceKey}"]`);
     const amount = card?.querySelector(".amount");
     if (!amount) return;
 
