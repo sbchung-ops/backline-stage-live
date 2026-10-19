@@ -1,6 +1,6 @@
 {
   "provider": "sanity",
-  "updatedAt": "2026-07-22T05:49:02.465Z",
+  "updatedAt": "2026-10-19T10:12:40.196Z",
   "sources": {
     "settings": "cms",
     "sections": "cms",
@@ -20,7 +20,7 @@
     "kakao_url": "http://pf.kakao.com/_UpUKX",
     "instagram_url": "https://www.instagram.com/backline_stage_official/",
     "youtube_url": "https://www.youtube.com/@BacklineStage",
-    "youtube_playlist_url": "https://www.youtube.com/playlist?list=PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd",
+    "youtube_playlist_url": "https://www.youtube.com/playlist?list=PLIDrOjZPLNq4",
     "application_form_url": "https://docs.google.com/forms/d/e/1FAIpQLSclJa4XQfJYC03KPzqHq17zx0yFXQO1G2dSYTsyLQZHat-QrA/viewform?usp=header",
     "naver_map_url": "https://map.naver.com/p/search/서울 마포구 와우산로 18길 20 지하1층",
     "latitude": 37.5510009887565,
@@ -55,7 +55,7 @@
     "weekday": "800000",
     "promo": {
       "enabled": true,
-      "discount_label": "25% OFF",
+      "discount_label": "25% OFF (12월31일까지)",
       "weekday_sale": "600000",
       "badge": "EVENT",
       "title": "오픈 기념 대관료 25% 할인",
@@ -115,6 +115,14 @@
       "title": "",
       "category": "STAGE",
       "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/4d2fe7e1b9442b287d25a99e132212959cb0ab52-6224x4672.jpg?w=1600&q=80&auto=format",
+        "alt": "Backline Stage"
+      }
+    },
+    {
+      "title": "",
+      "category": "STAGE",
+      "image": {
         "url": "https://cdn.sanity.io/images/pjlsf4hg/production/290c92ca5277986d1c1e69d1a7053e2ea8566021-4672x6224.jpg?w=1600&q=80&auto=format",
         "alt": "Backline Stage"
       }
@@ -138,14 +146,69 @@
   ],
   "schedules": [
     {
-      "title": "토끼공연",
-      "date": "2026-07-16",
+      "title": "경희대 탈무드 LOUD",
+      "date": "2026-08-21",
+      "dateBadge": "",
+      "url": "https://www.instagram.com/p/DcKRkkPAbGe/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "featured": true,
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/08d509a0297996596c7b87e1d73d182951b5b871-4500x5625.jpg?w=1000&q=80&auto=format",
+        "alt": "경희대 탈무드 LOUD"
+      }
+    },
+    {
+      "title": "유영 (游泳)",
+      "date": "2026-08-30",
       "dateBadge": "",
       "url": "",
       "featured": true,
       "image": {
-        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/9a9a938370adedcb3ee27b79e1382e09641e874d-236x252.png?w=1000&q=80&auto=format",
-        "alt": "토끼공연"
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/79276ecc5193784db9bf800aefb29444d0163258-3508x4961.jpg?w=1000&q=80&auto=format",
+        "alt": "유영 (游泳)"
+      }
+    },
+    {
+      "title": "MID-KNIGHT x HALFDOWN",
+      "date": "2026-10-10",
+      "dateBadge": "",
+      "url": "",
+      "featured": true,
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/e21db325d732f38b8541f86eee598b3f7a93c6ae-768x1376.png?w=1000&q=80&auto=format",
+        "alt": "MID-KNIGHT x HALFDOWN"
+      }
+    },
+    {
+      "title": "오비-라커",
+      "date": "2026-10-17",
+      "dateBadge": "",
+      "url": "",
+      "featured": true,
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/130237da4d3c3ade6474a7a867468c8e9ba3c4f8-2160x2700.tif?w=1000&q=80&auto=format",
+        "alt": "오비-라커"
+      }
+    },
+    {
+      "title": "이 아름다운 지옥에 살고 있는 당신을 위해",
+      "date": "2026-10-24",
+      "dateBadge": "",
+      "url": "",
+      "featured": true,
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/77ce858c9437e4616aae48c8ea248e54e766a44d-1280x1280.png?w=1000&q=80&auto=format",
+        "alt": "이 아름다운 지옥에 살고 있는 당신을 위해"
+      }
+    },
+    {
+      "title": "신토불이",
+      "date": "2026-08-14",
+      "dateBadge": "",
+      "url": "https://www.instagram.com/p/DbgKF-xksix/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "featured": true,
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/bce7fd0588f4aac4ea3b965a831740dfe36f82db-960x1280.avif?w=1000&q=80&auto=format",
+        "alt": "신토불이"
       }
     }
   ],

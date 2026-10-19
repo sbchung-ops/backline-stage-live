@@ -10,15 +10,23 @@
   init();
 
   async function init() {
-    try {
-      const res = await fetch("./assets/instagram-posts.json", { cache: "no-store" });
-      if (!res.ok) return; // 데이터가 없으면 HTML placeholder 유지
-      const data = await res.json();
-      const posts = Array.isArray(data.posts) ? data.posts.filter((post) => post?.image) : [];
-      if (!posts.length) return;
-      apply(posts, data);
-    } catch {
-      // 네트워크/파싱 실패 시에도 placeholder 유지
+    // Netlify에서는 API를 실시간 조회한다. 정적/미리보기 환경은 기존 JSON으로 안전하게 대체한다.
+    const sources = ["/api/instagram-feed", "./assets/instagram-posts.json"];
+
+    for (const source of sources) {
+      try {
+        const res = await fetch(source, { cache: "no-store" });
+        if (!res.ok) continue;
+
+        const data = await res.json();
+        const posts = Array.isArray(data.posts) ? data.posts.filter((post) => post?.image) : [];
+        if (!posts.length) continue;
+
+        apply(posts, data);
+        return;
+      } catch {
+        // 다음 데이터 소스를 시도한다.
+      }
     }
   }
 
