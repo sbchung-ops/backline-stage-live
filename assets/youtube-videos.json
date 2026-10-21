@@ -1,7 +1,7 @@
 {
   "provider": "youtube-atom-feed",
   "playlistId": "PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd",
-  "updatedAt": "2026-10-20T11:46:24.309Z",
+  "updatedAt": "2026-10-21T11:58:03.352Z",
   "videos": [
     {
       "id": "wb-GaR9rELM",
@@ -10,7 +10,7 @@
       "url": "https://www.youtube.com/watch?v=wb-GaR9rELM",
       "embedUrl": "https://www.youtube.com/embed/wb-GaR9rELM?rel=0&modestbranding=1",
       "thumbnail": "https://i4.ytimg.com/vi/wb-GaR9rELM/hqdefault.jpg",
-      "publishedAt": "2026-10-20T08:58:56+00:00",
+      "publishedAt": "2026-10-21T09:58:10+00:00",
       "channelTitle": "Backline Stage"
     },
     {
