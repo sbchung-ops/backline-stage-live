@@ -1,6 +1,6 @@
 {
   "provider": "sanity",
-  "updatedAt": "2026-10-22T21:42:02.566Z",
+  "updatedAt": "2026-10-23T04:59:07.601Z",
   "sources": {
     "settings": "cms",
     "sections": "cms",
@@ -176,6 +176,17 @@
       "image": {
         "url": "https://cdn.sanity.io/images/pjlsf4hg/production/e21db325d732f38b8541f86eee598b3f7a93c6ae-768x1376.png?w=1000&q=80&auto=format",
         "alt": "MID-KNIGHT x HALFDOWN"
+      }
+    },
+    {
+      "title": "SPIN-OFF",
+      "date": "2026-10-25",
+      "dateBadge": "",
+      "url": "",
+      "featured": true,
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/0e6711dec3d125cbef880bca48c1bd9831c7655d-3508x4961.jpg?w=1000&q=80&auto=format",
+        "alt": "SPIN-OFF"
       }
     },
     {
