@@ -1,6 +1,6 @@
 {
   "provider": "sanity",
-  "updatedAt": "2026-10-26T04:55:18.868Z",
+  "updatedAt": "2026-10-26T13:12:46.303Z",
   "sources": {
     "settings": "cms",
     "sections": "cms",
@@ -176,6 +176,28 @@
       "image": {
         "url": "https://cdn.sanity.io/images/pjlsf4hg/production/e21db325d732f38b8541f86eee598b3f7a93c6ae-768x1376.png?w=1000&q=80&auto=format",
         "alt": "MID-KNIGHT x HALFDOWN"
+      }
+    },
+    {
+      "title": "CONTROL FREAK",
+      "date": "2027-10-01",
+      "dateBadge": "",
+      "url": "",
+      "featured": true,
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/7a13882133427f6fbdeadc443a015ba53bf10ff6-1080x1530.jpg?w=1000&q=80&auto=format",
+        "alt": "CONTROL FREAK"
+      }
+    },
+    {
+      "title": "ZEPHANIAH",
+      "date": "2026-10-31",
+      "dateBadge": "",
+      "url": "",
+      "featured": true,
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/1b20c263b5e4c193c2b8f84d4c0c177f40958d89-1587x2245.png?w=1000&q=80&auto=format",
+        "alt": "ZEPHANIAH"
       }
     },
     {
