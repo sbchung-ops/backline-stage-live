@@ -1,8 +1,18 @@
 {
   "provider": "youtube-atom-feed",
   "playlistId": "PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd",
-  "updatedAt": "2026-10-21T11:58:03.352Z",
+  "updatedAt": "2026-10-28T13:04:45.061Z",
   "videos": [
+    {
+      "id": "NkJ9WJpZK4Y",
+      "title": "[Backline Stage | LOUD] 탈무드 - 빨간 피터",
+      "description": "탈무드 〈LOUD〉 | Live at BACKLINE STAGE 2026년 8월 21일, 경희대학교 중앙밴드동아리 탈무드가 여름 단독공연 〈LOUD〉로 백라인 스테이지를 찾았습니다. 45·46기 재학생과 OB가 함께 무대에 올라, 각자의 연주와 사운드로 여름밤을 채웠습니다. 이번 영상에서는 탈무드 OB가 연주한 쏜애플의 ‘빨간 피터’를 만나보실 수 있습니다. BACKLINE STAGE가 그날의 연주와 열기를 화면 너머로 전합니다. Recorded live at BACKLINE STAGE, Seoul. August 21, 2026. — PRODUCTION CREDITS 주최·기획 : 경희대학교 중앙밴드동아리 탈무드 장소 : BACKLINE STAGE 촬영 감독 : 이연하 https://www.instagram.com/kite9906/ 촬영 : 김남수 https://www.instagram.com/unndisputed__/ 조명 : 정운화 음향 : 오원석 믹스/마스터링 : 오원석 — FOLLOW BACKLINE STAGE https://www.instagram.com/backline_stage_official/ 탈무드 https://www.instagram.com/khu_talmood/ — CONTACT 공연·대관 문의 홈페이지 https://backline.co.kr/ 카카오톡 채널 http://pf.kakao.com/_UpUKX #탈무드 #경희대학교 #LOUD #쏜애플 #THORNAPPLE #빨간피터 #BACKLINESTAGE #백라인스테이지 #대학밴드",
+      "url": "https://www.youtube.com/watch?v=NkJ9WJpZK4Y",
+      "embedUrl": "https://www.youtube.com/embed/NkJ9WJpZK4Y?rel=0&modestbranding=1",
+      "thumbnail": "https://i3.ytimg.com/vi/NkJ9WJpZK4Y/hqdefault.jpg",
+      "publishedAt": "2026-10-28T06:41:51+00:00",
+      "channelTitle": "Backline Stage"
+    },
     {
       "id": "wb-GaR9rELM",
       "title": "[Backline Stage | LOUD] 탈무드 - Every Single Day",
@@ -71,16 +81,6 @@
       "embedUrl": "https://www.youtube.com/embed/6GoXXBiFzGo?rel=0&modestbranding=1",
       "thumbnail": "https://i3.ytimg.com/vi/6GoXXBiFzGo/hqdefault.jpg",
       "publishedAt": "2026-09-22T09:58:10+00:00",
-      "channelTitle": "Backline Stage"
-    },
-    {
-      "id": "K8Tjeh4Vx0Q",
-      "title": "[Backline Stage | LOUD] 탈무드 - Voodoo Child",
-      "description": "탈무드 〈LOUD〉 | Live at BACKLINE STAGE 2026년 8월 21일, 경희대학교 중앙밴드동아리 탈무드가 여름 단독공연 〈LOUD〉로 백라인 스테이지를 찾았습니다. 45·46기 재학생과 OB가 함께 무대에 올라, 각자의 연주와 사운드로 여름밤을 채웠습니다. 이번 영상에서는 탈무드 45기가 연주한 Jimi Hendrix의 ‘Voodoo Child’'를 만나보실 수 있습니다. BACKLINE STAGE가 그날의 연주와 열기를 화면 너머로 전합니다. Recorded live at BACKLINE STAGE, Seoul. August 21, 2026. — PRODUCTION CREDITS 주최·기획 : 경희대학교 중앙밴드동아리 탈무드 장소 : BACKLINE STAGE 촬영 감독 : 이연하 https://www.instagram.com/kite9906/ 촬영 : 김남수 https://www.instagram.com/unndisputed__/ 조명 : 정운화 음향 : 오원석 믹스/마스터링 : 오원석 — FOLLOW BACKLINE STAGE / backline_stage_official 탈무드 / khu_talmood — CONTACT 공연·대관 문의 홈페이지 https://backline.co.kr/ 카카오톡 채널 http://pf.kakao.com/_UpUKX #탈무드 #경희대학교 #LOUD #JimiHendrix #VoodooChild #BACKLINESTAGE #백라인스테이지 #대학밴드",
-      "url": "https://www.youtube.com/watch?v=K8Tjeh4Vx0Q",
-      "embedUrl": "https://www.youtube.com/embed/K8Tjeh4Vx0Q?rel=0&modestbranding=1",
-      "thumbnail": "https://i4.ytimg.com/vi/K8Tjeh4Vx0Q/hqdefault.jpg",
-      "publishedAt": "2026-09-18T10:00:07+00:00",
       "channelTitle": "Backline Stage"
     }
   ]
