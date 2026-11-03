@@ -1,6 +1,6 @@
 {
   "provider": "sanity",
-  "updatedAt": "2026-11-02T21:44:44.093Z",
+  "updatedAt": "2026-11-03T06:55:28.360Z",
   "sources": {
     "settings": "cms",
     "sections": "cms",
@@ -176,6 +176,17 @@
       "image": {
         "url": "https://cdn.sanity.io/images/pjlsf4hg/production/e21db325d732f38b8541f86eee598b3f7a93c6ae-768x1376.png?w=1000&q=80&auto=format",
         "alt": "MID-KNIGHT x HALFDOWN"
+      }
+    },
+    {
+      "title": "우리소리(인천대)",
+      "date": "2026-11-07",
+      "dateBadge": "",
+      "url": "",
+      "featured": true,
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/bd41c6754fdf44ac5ea3122fa8bbe272a4d1629f-855x1202.png?w=1000&q=80&auto=format",
+        "alt": "우리소리(인천대)"
       }
     },
     {
