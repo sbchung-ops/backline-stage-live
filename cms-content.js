@@ -1,3 +1,5 @@
+import {safeHref} from "./safe-url.js";
+
 (() => {
   const state = {
     content: null,
@@ -36,12 +38,10 @@
   function applySettings(settings) {
     const phone = clean(settings.phone);
     const email = clean(settings.email);
-    const kakao = clean(settings.kakao_url);
+    const kakao = clean(settings.kakao_url).replace(/^http:\/\/pf\.kakao\.com\//i, "https://pf.kakao.com/");
     const instagram = clean(settings.instagram_url);
     const youtube = clean(settings.youtube_url);
     const playlist = clean(settings.youtube_playlist_url);
-    const applicationForm = toGoogleFormViewUrl(clean(settings.application_form_url || settings.rental_form_url || settings.google_form_url));
-    const applicationFormEmbed = clean(settings.application_form_embed_url) || toGoogleFormEmbedUrl(applicationForm);
     const address = clean(settings.address);
     const representative = clean(settings.representative);
     const lat = Number(settings.latitude);
@@ -60,7 +60,7 @@
 
     // 장비 리스트 엑셀 — Sanity 에 업로드된 파일이 있으면 다운로드 버튼을 그 파일로 교체.
     // CDN 은 다른 도메인이라 download 속성이 무시되므로 ?dl= 로 강제 다운로드시킨다.
-    const equipmentFile = clean(settings.equipment_file_url);
+    const equipmentFile = safeHref(settings.equipment_file_url);
     if (equipmentFile) {
       const fileName = clean(settings.equipment_file_name) || "equipment-list.xlsx";
       const sep = equipmentFile.includes("?") ? "&" : "?";
@@ -71,8 +71,6 @@
     if (instagram) setLinks('a[href*="instagram.com"]', instagram);
     if (youtube) setLinks('a[href*="youtube.com/@BacklineStage"]', youtube);
     if (playlist) setLinks('a[href*="youtube.com/playlist"]', playlist);
-    if (applicationForm) setLinks('a[href*="docs.google.com/forms"]', applicationForm);
-    if (applicationFormEmbed) setFormEmbeds(applicationFormEmbed);
 
     if (representative) {
       replaceText("대표자: 정운화 · 오원석", `대표자: ${representative}`);
@@ -93,7 +91,7 @@
     const encodedAddress = encodeURIComponent(address || "서울 마포구 와우산로 18길 20 지하1층");
     const kakaoMap = `https://map.kakao.com/link/map/${mapLabel},${lat},${lng}`;
     const kakaoRoute = `https://map.kakao.com/link/to/${mapLabel},${lat},${lng}`;
-    const naverMap = clean(settings.naver_map_url) || `https://map.naver.com/p/search/${encodedAddress}`;
+    const naverMap = safeHref(settings.naver_map_url) || `https://map.naver.com/p/search/${encodedAddress}`;
     const googleSearch = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
     const googleRoute = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
     const googleEmbed = `https://maps.google.com/maps?q=${lat},${lng}&z=17&output=embed`;
@@ -169,7 +167,8 @@
       const button = root.querySelector('[data-cms-field="button"]');
       if (button) {
         if (section.buttonLabel) button.textContent = section.buttonLabel;
-        if (section.buttonUrl) button.href = section.buttonUrl;
+        const href = safeHref(section.buttonUrl, {allowContact: true});
+        if (href) button.href = href;
       }
     }
   }
@@ -219,7 +218,7 @@
     grid.innerHTML = schedules
       .map((item) => {
         const image = item.image || {};
-        const url = clean(item.url || "./contact.html");
+        const url = safeHref(item.url) || "./contact.html";
         const src = clean(image.url);
         if (!src) return "";
 
@@ -259,7 +258,7 @@
     stage.innerHTML = items
       .map((item) => {
         const image = item.image || {};
-        const url = clean(item.url) || defaultUrl;
+        const url = safeHref(item.url) || defaultUrl;
         const dateLabel = badge(item) || "LIVE";
         return `
           <a class="poster-card" href="${escapeAttr(url)}" data-poster-card data-title="${escapeAttr(item.title || "공연 예정")}" data-date="${escapeAttr(dateLabel)}">
@@ -309,45 +308,11 @@
   }
 
   function setLinks(selector, href) {
+    href = safeHref(href, {allowContact: true});
+    if (!href) return;
     document.querySelectorAll(selector).forEach((node) => {
       node.href = href;
     });
-  }
-
-  function setFormEmbeds(src) {
-    document.querySelectorAll('iframe[src*="docs.google.com/forms"], iframe[data-form-src*="docs.google.com/forms"]').forEach((node) => {
-      node.src = src;
-      node.dataset.formSrc = src;
-    });
-  }
-
-  function toGoogleFormEmbedUrl(url) {
-    if (!url) return "";
-
-    try {
-      const embedUrl = new URL(url, document.baseURI);
-      if (!embedUrl.hostname.includes("docs.google.com") || !embedUrl.pathname.includes("/forms/")) return url;
-      embedUrl.search = "embedded=true";
-      return embedUrl.toString();
-    } catch {
-      return url;
-    }
-  }
-
-  function toGoogleFormViewUrl(url) {
-    if (!url) return "";
-
-    try {
-      const viewUrl = new URL(url, document.baseURI);
-      if (!viewUrl.hostname.includes("docs.google.com") || !viewUrl.pathname.includes("/forms/")) return url;
-      if (viewUrl.searchParams.has("embedded")) {
-        viewUrl.searchParams.delete("embedded");
-        if (!viewUrl.search) viewUrl.searchParams.set("usp", "header");
-      }
-      return viewUrl.toString();
-    } catch {
-      return url;
-    }
   }
 
   function replaceText(from, to) {

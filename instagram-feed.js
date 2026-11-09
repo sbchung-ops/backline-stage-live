@@ -1,3 +1,5 @@
+import {safeHref} from "./safe-url.js";
+
 (() => {
   const grid = document.querySelector("#ig-feed");
   if (!grid) return;
@@ -45,7 +47,8 @@
   }
 
   function updateCell(cell, post) {
-    if (post.permalink) cell.href = post.permalink;
+    const permalink = safeHref(post.permalink);
+    if (permalink) cell.href = permalink;
 
     const image = cell.querySelector("img");
     if (image) {

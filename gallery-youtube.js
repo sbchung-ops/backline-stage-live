@@ -1,3 +1,5 @@
+import {safeHref} from "./safe-url.js";
+
 (() => {
   const list = document.querySelector("[data-youtube-list]");
   const featured = document.querySelector("[data-youtube-featured]");
@@ -22,7 +24,7 @@
 
   function renderVideos(videos, data) {
     const first = videos[0];
-    featured.src = first.embedUrl || `https://www.youtube.com/embed/${encodeURIComponent(first.id)}?rel=0&modestbranding=1`;
+    featured.src = safeHref(first.embedUrl) || `https://www.youtube.com/embed/${encodeURIComponent(first.id)}?rel=0&modestbranding=1`;
     featured.title = first.title ? `Backline Stage 최신 영상 - ${first.title}` : "Backline Stage 최신 영상";
 
     list.replaceChildren(...videos.slice(0, 4).map(createVideoItem));
@@ -39,7 +41,7 @@
   function createVideoItem(video, index) {
     const link = document.createElement("a");
     link.className = "yt-item";
-    link.href = video.url || `https://www.youtube.com/watch?v=${encodeURIComponent(video.id)}`;
+    link.href = safeHref(video.url) || `https://www.youtube.com/watch?v=${encodeURIComponent(video.id)}`;
     link.target = "_blank";
     link.rel = "noopener";
 

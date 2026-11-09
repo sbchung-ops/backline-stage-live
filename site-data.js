@@ -1,8 +1,10 @@
+import {safeHref} from "./safe-url.js";
+
 (async () => {
   const defaults = {
     phone: "010-3402-4358",
     email: "BacklineStageOfficial@gmail.com",
-    kakao_url: "http://pf.kakao.com/_UpUKX",
+    kakao_url: "https://pf.kakao.com/_UpUKX",
     instagram_url: "https://www.instagram.com/backline_stage_official/",
     youtube_url: "https://www.youtube.com/@BacklineStage",
     youtube_playlist_url: "https://www.youtube.com/playlist?list=PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd",
@@ -32,7 +34,7 @@
   function applySettings(settings) {
     const email = clean(settings.email) || defaults.email;
     const phone = clean(settings.phone) || defaults.phone;
-    const kakao = clean(settings.kakao_url) || defaults.kakao_url;
+    const kakao = clean(settings.kakao_url).replace(/^http:\/\/pf\.kakao\.com\//i, "https://pf.kakao.com/") || defaults.kakao_url;
     const instagram = clean(settings.instagram_url) || defaults.instagram_url;
     const youtube = clean(settings.youtube_url) || defaults.youtube_url;
     const playlist = clean(settings.youtube_playlist_url) || defaults.youtube_playlist_url;
@@ -103,6 +105,8 @@
   }
 
   function setLinks(selector, href) {
+    href = safeHref(href, {allowContact: true});
+    if (!href) return;
     document.querySelectorAll(selector).forEach((node) => {
       node.href = href;
     });
