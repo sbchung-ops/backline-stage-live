@@ -1,8 +1,18 @@
 {
   "provider": "youtube-atom-feed",
   "playlistId": "PL24svE8CNbW1ji87Ny9HIq1Kz8DU74oJd",
-  "updatedAt": "2026-11-04T19:50:42.904Z",
+  "updatedAt": "2026-11-10T19:48:13.574Z",
   "videos": [
+    {
+      "id": "wqpjLR9AeOE",
+      "title": "[Backline Stage | LOUD] 탈무드 - 토마토 살인사건",
+      "description": "탈무드 〈LOUD〉 | Live at BACKLINE STAGE 2026년 8월 21일, 경희대학교 중앙밴드동아리 탈무드가 여름 단독공연 〈LOUD〉로 백라인 스테이지를 찾았습니다. 45·46기 재학생과 OB가 함께 무대에 올랐습니다. 이번 영상에서는 탈무드 OB가 연주한 데카당의 ‘토마토 살인사건’을 만나보실 수 있습니다. Recorded live at BACKLINE STAGE, Seoul. August 21, 2026. — PRODUCTION CREDITS 주최·기획 | 경희대학교 중앙밴드동아리 탈무드 장소 | BACKLINE STAGE 촬영 감독 | 이연하 https://www.instagram.com/kite9906/ 촬영 | 김남수 https://www.instagram.com/unndisputed__/ 조명 | 정운화 음향 | 오원석 믹스/마스터링 | 오원석 — FOLLOW BACKLINE STAGE https://www.instagram.com/backline_stage_official/ 탈무드 https://www.instagram.com/khu_talmood/ — CONTACT 공연·대관 문의 홈페이지 https://backline.co.kr/ 카카오톡 채널 http://pf.kakao.com/_UpUKX #탈무드 #경희대학교 #LOUD #데카당 #토마토살인사건 #BACKLINESTAGE #백라인스테이지 #대학밴드",
+      "url": "https://www.youtube.com/watch?v=wqpjLR9AeOE",
+      "embedUrl": "https://www.youtube.com/embed/wqpjLR9AeOE?rel=0&modestbranding=1",
+      "thumbnail": "https://i4.ytimg.com/vi/wqpjLR9AeOE/hqdefault.jpg",
+      "publishedAt": "2026-11-09T23:16:05+00:00",
+      "channelTitle": "Backline Stage"
+    },
     {
       "id": "aMnKZT5esS4",
       "title": "[Backline Stage | LOUD] 탈무드 - The Pilot ᐸ/3",
@@ -71,16 +81,6 @@
       "embedUrl": "https://www.youtube.com/embed/Dd94PJt-WLQ?rel=0&modestbranding=1",
       "thumbnail": "https://i1.ytimg.com/vi/Dd94PJt-WLQ/hqdefault.jpg",
       "publishedAt": "2026-09-30T09:58:06+00:00",
-      "channelTitle": "Backline Stage"
-    },
-    {
-      "id": "fFq04fmBJCk",
-      "title": "[Backline Stage × 와르르 | 신토불이] 고려대 1905 - 야광",
-      "description": "BACKLINE STAGE × 와르르 〈身土不二 신토불이〉 | Live at BACKLINE STAGE 한국의 록 음악으로 뜨거운 여름을 날려보자! 2026년 8월 14일, 고려대학교 1905, 한국항공대학교 활주로, 홍익대학교 블랙테트라, 광운대학교 페가수스가 대학밴드 연합공연 〈신토불이〉를 위해 백라인 스테이지에 모였습니다. 네 팀은 각자 한 팀의 한국 록 밴드를 선정해 대표곡들을 자신들만의 색으로 재해석했습니다. 여기에 특별 게스트 아사달이 함께하며 한국 록 음악을 향한 애정을 나눴습니다. 이번 영상에서는 고려대학교 1905가 연주한 쏜애플의 ‘야광’을 만나보실 수 있습니다. BACKLINE STAGE × 와르르가 그날의 연주와 분위기를 화면 너머로 전합니다. Recorded live at BACKLINE STAGE, Seoul. August 14, 2026. — PRODUCTION CREDITS 주최·기획·제작 : 와르르 촬영 : 김인석, 양혁진 장소 제공 : BACKLINE STAGE 조명 : 정운화 음향 : 오원석 믹스/마스터링 : 오원석 — FOLLOW BACKLINE STAGE https://www.instagram.com/backline_stage_official/ 와르르 https://www.instagram.com/wowrrr.mag/ 1905 https://www.instagram.com/1905_kuband/ — CONTACT 공연·대관 문의 홈페이지 https://backline.co.kr/ 카카오톡 채널 http://pf.kakao.com/_UpUKX #1905 #BACKLINESTAGE #백라인스테이지 #와르르 #대학밴드",
-      "url": "https://www.youtube.com/watch?v=fFq04fmBJCk",
-      "embedUrl": "https://www.youtube.com/embed/fFq04fmBJCk?rel=0&modestbranding=1",
-      "thumbnail": "https://i3.ytimg.com/vi/fFq04fmBJCk/hqdefault.jpg",
-      "publishedAt": "2026-09-25T09:58:06+00:00",
       "channelTitle": "Backline Stage"
     }
   ]
