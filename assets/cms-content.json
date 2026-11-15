@@ -1,6 +1,6 @@
 {
   "provider": "sanity",
-  "updatedAt": "2026-11-14T22:30:45.323Z",
+  "updatedAt": "2026-11-15T06:42:37.362Z",
   "sources": {
     "settings": "cms",
     "sections": "cms",
@@ -176,6 +176,28 @@
       "image": {
         "url": "https://cdn.sanity.io/images/pjlsf4hg/production/e21db325d732f38b8541f86eee598b3f7a93c6ae-768x1376.png?w=1000&q=80&auto=format",
         "alt": "MID-KNIGHT x HALFDOWN"
+      }
+    },
+    {
+      "title": "악동(樂冬)",
+      "date": "2026-11-22",
+      "dateBadge": "",
+      "url": "",
+      "featured": true,
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/3987a421dc2798a6894376786d2cf79672f3491e-3375x4219.png?w=1000&q=80&auto=format",
+        "alt": "악동(樂冬)"
+      }
+    },
+    {
+      "title": "雪雪雪",
+      "date": "2026-11-21",
+      "dateBadge": "",
+      "url": "",
+      "featured": true,
+      "image": {
+        "url": "https://cdn.sanity.io/images/pjlsf4hg/production/30c382c2743b91fd0c80b1b2af8c759f5c01d555-2481x3508.png?w=1000&q=80&auto=format",
+        "alt": "雪雪雪"
       }
     },
     {
